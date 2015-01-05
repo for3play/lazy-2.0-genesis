@@ -1,0 +1,149 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Lazy 2.0 (Genesis)</title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Lazy 2.0 (Genesis)</h1>
+    </header>
+    <div id="container">
+      <p class="tagline"></p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/for3play/lazy-2.0-genesis/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/for3play/lazy-2.0-genesis/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/for3play/lazy-2.0-genesis" class="code">View Lazy 2.0 (Genesis) on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h2>
+<a id="lazy-20-genesis-readme" class="anchor" href="#lazy-20-genesis-readme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lazy 2.0 (Genesis) Readme</h2>
+
+<p>Genesis is a lightweight, template based MVC framework which features:</p>
+
+<ul>
+<li>a PHP-based core. Unlike other frameworks where you, as a developer, are forced to adapt to it, Genesis takes your fundamental knowledge of PHP and adapts to you. You spend more time developing, rather than learning the framework.</li>
+<li>a template engine based on the Pear\HTML_Template_ITX Class, that allows total separation of HTML and PHP code.This allows PHP/MySQL and HTML/CSS/Javascript developers to work simultaneously on a single page of the site, as opposed to traditional non-template approaches.</li>
+<li>a structured Data Controller that utilizes the PHP PDO Class, that includes auto validation based on table schema, automatic paging, and field sanitation.</li>
+<li>a Session Class that generates a unique ID to allow multiple development sites to have individual session variables.</li>
+</ul>
+
+<p><em>Genesis is free to use, distribute and share.
+Credits to Norbert Christian L. Feria for initiating the original prototype of this project and giving inspiration to its development.</em></p>
+
+<h2>
+<a id="basic-overview" class="anchor" href="#basic-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Overview</h2>
+
+<p>The navigation of the framework depends on file and folder system specific structure which will be matched by the URI.
+Defaults:</p>
+
+<ul>
+<li>main template: <code>theme/html</code>
+</li>
+<li>contents folder: <code>contents/</code>
+</li>
+<li>default contents folder: <code>contents/default/</code>
+</li>
+<li>default content: <code>contents/default/default.htm</code>
+</li>
+<li>global include file: <code>contents/global.php</code>
+</li>
+<li>section specific global include file: <code>contents/&lt;section(s)&gt;/global.php</code>
+</li>
+</ul>
+
+<h2>
+<a id="url-and-folder-structure-relationship" class="anchor" href="#url-and-folder-structure-relationship" aria-hidden="true"><span class="octicon octicon-link"></span></a>URL and Folder structure relationship</h2>
+
+<p>Loaded files will be based on the URI. Browsing to the home directory will load both <code>contents/default/default.htm</code> as the template, and <code>contents/default/default.php</code> as the backend file.</p>
+
+<p>Internal contents are be based on the depth of the URL and the structure of the folder, example: <a href="http://hostname.com/about/">http://hostname.com/about/</a> will check if either <code>contents/about.htm</code> and <code>contents/about.php</code> exists, if not, it will proceed to check <code>contents/about/default.htm</code> and <code>contents/about/default.php</code> exists, and if neither check succeeds, it will load <code>contents/404.htm</code> as the display template.</p>
+
+<p>The framework does not limit the number of folders in the URL, example: browsing to <code>http://hostname.com/universe/solarsystem/milkyway/earth/</code> will trigger a check for <code>contents/universe/solarsystem/milyway/earth.htm</code> or <code>contents/universe/solarsystem/milyway/earth.php</code>, then <code>contents/universe/solarsystem/milyway/earth/default.htm</code> or <code>contents/universe/solarsystem/milyway/earth/default.php</code>.</p>
+
+<p><em>More information are provided in each respective classes.</em></p>
+
+<h2>
+<a id="application-objects-and-defaults" class="anchor" href="#application-objects-and-defaults" aria-hidden="true"><span class="octicon octicon-link"></span></a>Application Objects and Defaults</h2>
+
+<ul>
+<li>$app - main app controller</li>
+<li>$_theme - main theme template object</li>
+<li>$_contents - main content template object</li>
+<li>$_session - main app session controller</li>
+<li>{SITEURL} - absolute path of the project/site</li>
+<li>{IMAGEPATH} - absolute path of the image directory</li>
+<li>{PAGE_TITLE} - title of page. Can be set as meta tag parameter inside the template (.htm) file</li>
+</ul>
+
+<h2>
+<a id="how-do-i-get-set-up" class="anchor" href="#how-do-i-get-set-up" aria-hidden="true"><span class="octicon octicon-link"></span></a>How do I get set up?</h2>
+
+<ul>
+<li>Folder Structure
+
+<ul>
+<li>libs/ : Genesis library files with core PEAR Library</li>
+<li>public/ : public project files</li>
+</ul>
+</li>
+<li>Configuration
+
+<ul>
+<li>project configuration can be modified under publi/config.php</li>
+</ul>
+</li>
+<li>Dependencies
+
+<ul>
+<li>core PEAR libaray</li>
+<li>HTML_Template_ITX Class</li>
+</ul>
+</li>
+</ul>
+
+<p><em>full class documentation can be found in trello. <a href="https://trello.com/b/7bZ6BtHl/lazy-2-0-genesis">https://trello.com/b/7bZ6BtHl/lazy-2-0-genesis</a>
+you can email me for access: <a href="mailto:for3play@gmail.com">for3play@gmail.com</a></em></p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/for3play" class="avatar"><img src="https://avatars3.githubusercontent.com/u/8489175?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/for3play">for3play</a> maintains <a href="https://github.com/for3play/lazy-2.0-genesis">Lazy 2.0 (Genesis)</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/for3play/lazy-2.0-genesis/tarball/master" class="tar">tar</a><a href="https://github.com/for3play/lazy-2.0-genesis/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
