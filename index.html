@@ -32,9 +32,9 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2>
-<a id="lazy-20-genesis-readme" class="anchor" href="#lazy-20-genesis-readme" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lazy 2.0 (Genesis) Readme</h2>
+<a id="lazy-20-genesis" class="anchor" href="#lazy-20-genesis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lazy 2.0 (Genesis)</h2>
 
-<p>Genesis is a lightweight, template based MVC framework which features:</p>
+<p>Genesis is a lightweight, template based MVC micro-framework which features:</p>
 
 <ul>
 <li>a PHP-based core. Unlike other frameworks where you, as a developer, are forced to adapt to it, Genesis takes your fundamental knowledge of PHP and adapts to you. You spend more time developing, rather than learning the framework.</li>
@@ -43,9 +43,6 @@
 <li>a Session Class that generates a unique ID to allow multiple development sites to have individual session variables.</li>
 </ul>
 
-<p><em>Genesis is free to use, distribute and share.
-Credits to Norbert Christian L. Feria for initiating the original prototype of this project and giving inspiration to its development.</em></p>
-
 <h2>
 <a id="basic-overview" class="anchor" href="#basic-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Overview</h2>
 
@@ -53,19 +50,21 @@ Credits to Norbert Christian L. Feria for initiating the original prototype of t
 <li>URL-based routing</li>
 <li>Separated HTML and PHP coding</li>
 <li>Paired files allow for simultaenous editing of a single page or section</li>
-<li>PHP-focused approach</li>
+<li>Non-restrictive coding approach</li>
+<li>Automated Data validation</li>
+<li>Automated SQL generation for update and inserts</li>
+<li>Separate layout and contents template which can be customized separate from each other</li>
 </ul>
 
 <h2>
-<a id="url-and-folder-structure-relationship" class="anchor" href="#url-and-folder-structure-relationship" aria-hidden="true"><span class="octicon octicon-link"></span></a>URL and Folder structure relationship</h2>
+<a id="who-should-use-this" class="anchor" href="#who-should-use-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Who should use this?</h2>
 
-<p>Loaded files will be based on the URI. Browsing to the home directory will load both <code>contents/default/default.htm</code> as the template, and <code>contents/default/default.php</code> as the backend file.</p>
-
-<p>Internal contents are be based on the depth of the URL and the structure of the folder, example: <a href="http://hostname.com/about/">http://hostname.com/about/</a> will check if either <code>contents/about/default.htm</code> and/or <code>contents/about/default.php</code> exists, if not, it will proceed to check <code>contents/about.htm</code> and <code>contents/about.php</code> exists, and if neither check succeeds, it will load <code>contents/404.htm</code> as the display template.</p>
-
-<p>The framework does not limit the number of folders in the URL, example: browsing to <code>http://hostname.com/universe/solarsystem/milkyway/earth/</code> will trigger a check for <code>contents/universe/solarsystem/milyway/earth/default.htm</code> or <code>contents/universe/solarsystem/milyway/earth/default.php</code>, then <code>contents/universe/solarsystem/milyway/earth.htm</code> or <code>contents/universe/solarsystem/milyway/earth.php</code>.</p>
-
-<p><em>More information are provided in each respective classes.</em></p>
+<ul>
+<li>HTML Developers who need a zero-configuration template framework</li>
+<li>PHP Developers who need a micro-framework which allows flexibility in coding</li>
+<li>Teams who focus on separate front and backend development</li>
+<li>Developers who mostly develop business applications</li>
+</ul>
 
 <h2>
 <a id="how-do-i-get-set-up" class="anchor" href="#how-do-i-get-set-up" aria-hidden="true"><span class="octicon octicon-link"></span></a>How do I get set up?</h2>
@@ -73,11 +72,12 @@ Credits to Norbert Christian L. Feria for initiating the original prototype of t
 <ul>
 <li>Download Genesis Framework files (<a href="http://for3play.github.io/lazy-2.0-genesis/">http://for3play.github.io/lazy-2.0-genesis/</a>)</li>
 <li>Enable mod_rewrite module for Apache</li>
-<li>Grab a cup of coffee and start reading throught the documentation under public/</li>
+<li>Grab a cup of coffee and start reading throught the documentation under <code>public/</code>
+</li>
 </ul>
 
-<p><em>full class documentation can be found in trello. <a href="https://trello.com/b/7bZ6BtHl/lazy-2-0-genesis">https://trello.com/b/7bZ6BtHl/lazy-2-0-genesis</a>
-you can email me for access: <a href="mailto:for3play@gmail.com">for3play@gmail.com</a></em></p>
+<p><em>Genesis is free to use, distribute and share.
+Credits to Norbert Christian L. Feria for initiating the original prototype of this project and giving inspiration to its development.</em></p>
       </section>
     </div>
 
