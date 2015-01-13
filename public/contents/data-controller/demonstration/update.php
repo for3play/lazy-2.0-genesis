@@ -24,7 +24,7 @@
 				$form->setVariable($genre);					// set values for "genres" dropdown options
 				if ($genre['gen_id'] == $post['fk_gen_id']) $form->setVariable('gen_selected', 'SELECTED');
 																	// set the current dropdown item to SELECTED if book is this genre
-				$form->parseCurrentBlock('genres');			// parse "genres" dropdown options
+				$form->parseCurrentBlock();					// parse "genres" dropdown options
 			}
 		}
 		$_contents->setVariable('display-form', $form->get()); 				// display form in {result} placeholder

@@ -15,6 +15,6 @@
 			$_contents->setVariable($genre);					// set values for "genres" dropdown options
 			if ($genre['gen_id'] == $gen_id) $_contents->setVariable('gen_selected', 'SELECTED');
 																// set the current dropdown item to SELECTED if book is this genre
-			$_contents->parseCurrentBlock('genres');			// parse "genres" dropdown options
+			$_contents->parseCurrentBlock();			// parse "genres" dropdown options
 		}
 	}

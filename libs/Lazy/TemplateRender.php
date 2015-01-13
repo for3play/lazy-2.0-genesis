@@ -51,7 +51,7 @@ class TemplateRender
 			if (self::$_contents->blockExists($key)) {
 				self::$_contents->setCurrentBlock($key);
 				self::$_contents->setVariable('PH_'.strtolower($key),'');
-				self::$_contents->parseCurrentBlock($key);
+				self::$_contents->parseCurrentBlock();
 				self::$_theme->setVariable($key,trim(self::$_contents->get($key)));
 				self::$_contents->replaceBlock($key,' ');
 			}

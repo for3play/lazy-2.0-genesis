@@ -7,6 +7,6 @@
 		foreach ($genres['data'] as $genre) {
 			$_contents->setCurrentBlock('genres');				// set current block to "genres" dropdown options
 			$_contents->setVariable($genre);					// set values for "genres" dropdown options
-			$_contents->parseCurrentBlock('genres');			// parse "genres" dropdown options
+			$_contents->parseCurrentBlock();					// parse "genres" dropdown options
 		}
 	}

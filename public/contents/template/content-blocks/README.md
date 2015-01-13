@@ -57,7 +57,7 @@ Conditional or hidden blocks should not have application default variable placeh
 Loops
 ---
 
-Content blocks can also be reiterated via the PHP code using `->setCurrentBlock([blockName])` and parsed via `->parseCurrentBlock([blockName])
+Content blocks can also be reiterated via the PHP code using `->setCurrentBlock([blockName])` and parsed via `->parseCurrentBlock()
 
 HTML
 <pre>
@@ -73,7 +73,7 @@ PHP
 	for ($i=0; $i<=5; $i++) {
 		$_contents->setCurrentBlock('row');		// sets the "row" block to be reiterated
 		$_contents->setVariable('i', $i);		// assigns `$x` to the current block variable
-		$_contents->parseCurrentBlock('row');	// parses the "row" block on each iteration
+		$_contents->parseCurrentBlock();	// parses the "row" block on each iteration
 	}
 </pre>
 
@@ -94,7 +94,7 @@ Output
 Nested Loops
 ---
 
-You can also create nested loops by putting Content Blocks within Content Blocks. Instead of using `->parseCurrentBlock([blockname])`, nesting needs to use `->parse([blockname])` for each block.
+You can also create nested loops by putting Content Blocks within Content Blocks. Instead of using `->parseCurrentBlock()`, nesting needs to use `->parse([blockname])` for each block.
 
 HTML
 <pre>
