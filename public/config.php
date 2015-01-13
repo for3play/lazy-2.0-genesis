@@ -35,7 +35,12 @@ switch($_SERVER['HTTP_HOST']) {
 		define('INCLUDEPATH','../libs/');
 		break;
 
-	case 'testbed':
+	case 'mack-linux':
+		define('DB_HOSTNAME','localhost');
+		define('DB_USERNAME','root');
+		define('DB_PASSWORD','');
+		define('DB_DBNAME','lazy_genesis');
+		define('INCLUDEPATH','../libs/');
 		break;
 
 	default:
