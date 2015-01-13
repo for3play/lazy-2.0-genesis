@@ -1,0 +1,10 @@
+{
+	"output_path": "../../theme/css/",
+	"options": {
+		"cache":         false,
+		"debug":         false,
+		"line-comments": true,
+		"line-numbers":  true,
+		"style":         "nested"
+	}
+}

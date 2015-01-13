@@ -1,0 +1,41 @@
+<!-- BEGIN PAGE_TITLE -->
+	{PH_page_title} Data Controller - Demonstration :: Genesis
+<!-- END PAGE_TITLE -->
+<!-- BEGIN META_DESCRIPTION -->
+	{PH_meta_description} Data Controller
+<!-- END META_DESCRIPTION -->
+<!-- BEGIN META_KEYWORDS -->
+	{PH_meta_keywords} Data Controller
+<!-- END META_KEYWORDS -->
+<h2>Live Output</h2>
+
+<div id="table">
+	<table>
+		<tr class="header">
+			<td class="title">Book Title</td>
+			<td class="author">Author</td>
+			<td class="category">Genre</td>
+			<td> </td>
+		</tr>
+		<!-- BEGIN books -->
+			<tr>
+				<td>{book_title}</td>
+				<td>{book_author}</td>
+				<td>{gen_name}</td>
+				<td><a href="edit?id={book_id}">Edit</a></td>
+			</tr>
+		<!-- END books -->
+		<!-- BEGIN empty -->
+			<tr><td colspan="4" class="empty">No Records Found {empty}</td></tr>
+		<!-- END empty -->
+		<tr>
+			<td colspan="2" class="info">
+				Showing {recordCount} record(s). Total Records: {totalRecords}. Page {currentPage} of {totalPages}
+			</td>
+			<td colspan="2" class="paging">
+				Page: &nbsp; &nbsp; <!-- BEGIN paging --><a href="?page={page}#paging" class="{page-active}">{page}</a> &nbsp; <!-- END paging -->
+			</td>
+		</tr>
+	</table>
+	<a href="add/">Add New</a>
+</div>

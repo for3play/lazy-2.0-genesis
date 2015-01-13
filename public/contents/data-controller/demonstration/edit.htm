@@ -1,0 +1,53 @@
+<!-- BEGIN PAGE_TITLE -->
+	{PH_page_title} Data Controller - Demonstration - Edit Record :: Genesis
+<!-- END PAGE_TITLE -->
+<!-- BEGIN META_DESCRIPTION -->
+	{PH_meta_description} Data Controller
+<!-- END META_DESCRIPTION -->
+<!-- BEGIN META_KEYWORDS -->
+	{PH_meta_keywords} Data Controller
+<!-- END META_KEYWORDS -->
+<h2>Live Output - Editing Record</h2>
+<form  method="POST" action="{SITEURL}data-controller/demonstration/update">
+	<div id="form">
+		<div>
+			<p>Book Title:</p>
+			<p><input type="text" name="title" value="{book_title}" class="{error-title}" style="width:190px;">*</p>
+			<p>{errorMsg-title}</p>
+		</div>
+		<div>
+			<p>Book Author:</p>
+			<p><input type="text" name="author" value="{book_author}" class="{error-author}" style="width:190px;">*</p>
+			<p>{errorMsg-author}</p>
+		</div>
+		<div>
+			<p>Date Published:</p>
+			<p><input type="text" name="date_published" value="{book_date_published}" class="{error-date_published}"></p>
+			<p></p>
+		</div>
+		<div>
+			<p># of pages:</p>
+			<p><input type="text" name="pages" value="{book_pages}" class="{error-pages}" style="width:50px;"></p>
+			<p>{errorMsg-pages}</p>
+		</div>
+		<div>
+			<p>Author Email:</p>
+			<p><input type="text" name="author_email" value="{book_author_email}" class="{error-author_email}" style="width:190px;"></p>
+			<p>{errorMsg-author_email}</p>
+		</div>
+		<div>
+			<p>Genre:</p>
+			<p><select name="fk_gen_id" class="{error-fk_gen_id}" style="width:190px;">
+					<option value=""> Select Genre </option>
+					<!-- BEGIN genres -->
+						<option value="{gen_id}" {gen_selected}>{gen_name}</option>
+					<!-- END genres -->
+				</select>*
+			</p>
+			<p>{errorMsg-fk_gen_id}</p>
+		</div>
+		<input type="hidden" name="id" value="{book_id}">
+		<input type="hidden" name="action" value="UPDATE">
+	</div>
+	<input type="submit">
+</form>
