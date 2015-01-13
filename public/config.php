@@ -3,8 +3,7 @@
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING ^ E_DEPRECATED);
 date_default_timezone_set('Asia/Manila');
 define('URL', 'http://'.$_SERVER['HTTP_HOST'].str_replace('index.php', '', $_SERVER['PHP_SELF']));
-define('INCLUDEPATH','../libs/');
-#define('APP_ID', 'lazy2');
+define('APP_PATH', dirname(__FILE__));
 
 $settings=[
 	'SITE_TITLE'=>'LAZY 2.0 (Genesis)',
@@ -49,7 +48,8 @@ switch($_SERVER['HTTP_HOST']) {
 }
 
 function Autoload($class){
-	if(file_exists(INCLUDEPATH.$class.'.php')) require_once(INCLUDEPATH.$class.'.php');
+	$classFile = APP_PATH.'/'.INCLUDEPATH.str_replace('\\','/',$class).'.php';
+	if(file_exists($classFile)) require_once($classFile);
 }
 spl_autoload_register('Autoload');
 include('libs/Parsedown/Parsedown.php');

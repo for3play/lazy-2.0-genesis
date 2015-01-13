@@ -3,7 +3,7 @@ ob_start();
 $settings=array();
 $templateConfig=array();
 require_once('config.php');
-use lazy\App;
+use Lazy\App;
 
 $app = App::getInstance($settings, $templateConfig);
 $app->start();
