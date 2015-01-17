@@ -8,6 +8,7 @@
 namespace Lazy;
 use Exception;
 use \Lazy\Session;
+require_once(__DIR__."../../Pear/Cache/Lite.php");
 
 /**
  * Database Model class for the Lazy Framework
@@ -30,14 +31,15 @@ class DataController extends Database
 	private $tableFields;
 	private $tablePrefix;
 	private $qry;
-	private static $_session;
+	private static $db_cache;
+	#private static $_session;
 
 	use Debug;
 	public function __construct()
 	{
 		parent::__construct();
 		$this->numArray = array('float', 'bigint', 'int', 'tinyint', 'smallint', 'integer', 'real', 'double', 'decimal', 'numeric');
-		self::$_session = new Session;
+		$this->initCache();
 	}
 
 	protected function __clone()
@@ -129,22 +131,17 @@ class DataController extends Database
 
 	private function getSchema()
 	{
+		$db_schema = array();
 		if (is_null($this->tableName)) Debug::error('No Assigned Table','Assign tablename: $DataModel->tableName = &quot;&lt;table name&gt&quot;');
-		$sql = 'DESCRIBE '.$this->tableName;
-		$this->schema = $this->query($sql)->fetchAll();
-		if (!is_null(self::$_session['DB_SCHEMA'])) {
-			$db_schema = self::$_session['DB_SCHEMA'];
+		$db_schema = unserialize(self::$db_cache->get('DB_SCHEMA'));
+		if (!(is_null($db_schema[$this->tableName]))) {
+			$this->schema = $db_schema[$this->tableName];
 		} else {
-			$db_schema = array();
-		}
-		if (is_null(self::$_session['DB_SCHEMA'][$this->tableName])) {
-
 			$sql = 'DESCRIBE '.$this->tableName;
 			$this->schema = $this->query($sql)->fetchAll();
 			$db_schema[$this->tableName] = $this->schema;
-			self::$_session['DB_SCHEMA'] = $db_schema;
-		} else {
-			$this->schema = self::$_session['DB_SCHEMA'][$this->tableName];
+			self::$db_cache->save(serialize($db_schema), 'DB_SCHEMA');
+
 		}
 	}
 
@@ -244,5 +241,26 @@ class DataController extends Database
 			}
 		}
 		return substr($fields, 0, strlen($fields)-2);
+	}
+
+	private function initCache()
+	{
+
+		$cache_dir = (defined('CACHE_DIR')) ? CACHE_DIR : '_tmp/';
+		if (!isset(self::$db_cache)) {
+			$options = array(
+			    'cacheDir' => $cache_dir,
+			    'lifeTime' => null
+			);
+			self::$db_cache = new \Cache_Lite($options);
+		}
+		if (!(self::$db_cache->get('DB_SCHEMA'))) {
+			self::$db_cache->save('empty', 'DB_SCHEMA');
+		}
+		if ( isset($_GET['clear_cache']) && ($_GET['clear_cache']=='DB_SCHEMA' || $_GET['clear_cache']=='1') ) {
+			self::$db_cache->remove('DB_SCHEMA');
+		}
+
+
 	}
 }

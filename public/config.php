@@ -4,6 +4,7 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING ^ E_DEPRECATED);
 date_default_timezone_set('Asia/Manila');
 define('URL', 'http://'.$_SERVER['HTTP_HOST'].str_replace('index.php', '', $_SERVER['PHP_SELF']));
 define('APP_PATH', dirname(__FILE__));
+define('CACHE_DIR', '_tmp/');
 
 $settings=[
 	'SITE_TITLE'=>'LAZY 2.0 (Genesis)',
@@ -11,7 +12,7 @@ $settings=[
 	'META_DESCRIPTION'=>'LAZY 2.0 (Genesis)',
 	'META_KEYWORDS'=>'LAZY 2.0 (Genesis)',
 	'SITEURL'=>URL,
-	'IMAGEPATH'=>URL.'images/'
+	'IMAGEPATH'=>URL.'images/',
 ];
 
 $templateConfig=[
@@ -51,6 +52,8 @@ switch($_SERVER['HTTP_HOST']) {
 		define('INCLUDEPATH','../libs/');
 		break;
 }
+
+define('SETTINGS', $settings);
 
 function Autoload($class){
 	$classFile = APP_PATH.'/'.INCLUDEPATH.str_replace('\\','/',$class).'.php';

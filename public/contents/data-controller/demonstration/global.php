@@ -1,5 +1,4 @@
 <?php
-
 $qry = new Lazy\DataController;
 $fileName = $app::$route['fileName'];
 $path = $app::$route['path'];
