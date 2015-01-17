@@ -41,4 +41,5 @@ Default Folder & File structure
 * `js/` - suggested JS folder for production (or for output of minifying)
 * `logs/` - default log folder
 * `libs/` - suggested project-specific PHP file folder
+* `_tmp/` - default cache folder
 * `config.php` - default configuration file
