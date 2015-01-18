@@ -257,10 +257,5 @@ class DataController extends Database
 		if (!(self::$db_cache->get('DB_SCHEMA'))) {
 			self::$db_cache->save('empty', 'DB_SCHEMA');
 		}
-		if ( isset($_GET['clear_cache']) && ($_GET['clear_cache']=='DB_SCHEMA' || $_GET['clear_cache']=='1') ) {
-			self::$db_cache->remove('DB_SCHEMA');
-		}
-
-
 	}
 }
