@@ -256,6 +256,5 @@ class DataController extends Database
 		if (!(self::$db_cache->get('DB_SCHEMA'))) {
 			self::$db_cache->save('empty', 'DB_SCHEMA');
 		}
-		var_dump(self::$db_cache);
 	}
 }
