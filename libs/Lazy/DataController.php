@@ -8,7 +8,7 @@
 namespace Lazy;
 use Exception;
 use \Lazy\Session;
-require_once(__DIR__."../../Pear/Cache/Lite.php");
+use \Lazy\Cache;
 
 /**
  * Database Model class for the Lazy Framework
@@ -245,14 +245,13 @@ class DataController extends Database
 
 	private function initCache()
 	{
-
 		$cache_dir = (defined('CACHE_DIR')) ? CACHE_DIR : '_tmp/';
 		if (!isset(self::$db_cache)) {
 			$options = array(
 			    'cacheDir' => $cache_dir,
 			    'lifeTime' => null
 			);
-			self::$db_cache = new \Cache_Lite($options);
+			self::$db_cache = new Cache($options);
 		}
 		if (!(self::$db_cache->get('DB_SCHEMA'))) {
 			self::$db_cache->save('empty', 'DB_SCHEMA');
