@@ -1,3 +1,4 @@
+@import "_import";
 
 $sidebar-size: 220px;
 $font-color: #000000;
@@ -258,6 +259,28 @@ pre{
 	.input-error{
 		background: pink;
 	}
+}
+
+
+.button {
+	border: $border;
+	padding: 3px 5px;
+	color: #666666;
+	text-decoration: none;
+	@include border-radius(3px);
+	@include gradient-reverse;
+}
+
+.ui-widget {
+	font-size: .9em !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    padding-bottom: 0.1em !important;
+}
+
+.ui-dialog-titlebar-close {
+  visibility: hidden !important;
 }
 
 .float-left{
