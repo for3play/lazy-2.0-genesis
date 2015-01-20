@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="{META_DESCRIPTION}" />
 	<meta name="keywords" content="{META_KEYWORDS}" />
+	<script type="text/javascript" src="{SITEURL}js/jquery-1.11.2.min.js"></script>
 	<title>{PAGE_TITLE}</title>
 </head>
 <body>
@@ -49,6 +50,7 @@
 					<li><a href="{SITEURL}data-controller/" class="{URL-data-controller}">Data Controller</a>
 						<ul class="submenu">
 							<li><a href="{SITEURL}data-controller/demonstration/" class="{URL-data-controller.demonstration}{URL-data-controller.demonstration.edit}{URL-data-controller.demonstration.add}{URL-data-controller.demonstration.update}">Demonstration</a></li>
+							<li><a href="{SITEURL}grid/" class="{URL-grid}">Data Grid</a></li>
 						</ul>
 					</li>
 

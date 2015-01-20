@@ -1,0 +1,43 @@
+
+<link rel="stylesheet" type="text/css" href="{SITEURL}theme/css/grid.css">
+<script type="text/javascript" src="{SITEURL}js/modal.js"></script>
+<script type="text/javascript" src="{SITEURL}js/jquery.grid.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+	$('.grid-test').grid();
+});
+</script>
+
+
+<div class="grid-test">
+	<table cellpadding="0" cellspacing="0" border="0">
+	  	<tr class="header">
+	      <td width="180px">Title</td>
+	      <td width="150px">Author</td>
+	      <td width="180px">Author Email</td>
+	      <td width="130px">Genre</td>
+	    </tr>
+	    <tr class="init-row">
+	      <td>
+	      	<span class="book_title"></span>
+	      	<div class="quicklinks"><a href="{SITEURL}{uri}/edit/?id=" class="book_id display-modal">Edit</a></div>
+
+	      </td>
+	      <td><span class="book_author"></span></td>
+	      <td><span class="book_author_email"></span></td>
+	      <td><span class="gen_name"></span></td>
+	    </tr>
+
+    </table>
+
+	<div class="grid-controls">
+		<div class="pad">
+            <div class="grid-info float-left">Page: <span class="currentPage"></span> of <span class="totalPages"></span> of <span class="totalRecords"></span> records.</div>
+            <div class="page-nav float-left"><input type="input" name="gotopage" class="gotopage" value="" /><a href="#" class="go-page" rel="">Go To Page</a></div>
+            <div class="paging float-right"><a href="#" class="page-previous page-link" rel="">Previous Page</a><a href="#" class="page-next page-link" rel="">Next Page</a>&nbsp; &nbsp;</div>
+	        <div class="clear"></div>
+        </div>
+    </div>
+	<input type="hidden" name="grid_url" value="{SITEURL}{uri}/load/" />
+    <input type="hidden" name="parameters" value="" />
+</div>
