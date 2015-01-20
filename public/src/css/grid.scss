@@ -211,6 +211,13 @@ $border: 1px solid #aaaaaa;
 			}
 		}
 
+		tr.grid-row.row-alt-color {
+
+			td {
+				background: #e0e0e0;
+			}
+		}
+
 		tr.grid-row:hover {
 
 			.quicklinks {

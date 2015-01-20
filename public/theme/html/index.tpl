@@ -50,9 +50,9 @@
 					<li><a href="{SITEURL}data-controller/" class="{URL-data-controller}">Data Controller</a>
 						<ul class="submenu">
 							<li><a href="{SITEURL}data-controller/demonstration/" class="{URL-data-controller.demonstration}{URL-data-controller.demonstration.edit}{URL-data-controller.demonstration.add}{URL-data-controller.demonstration.update}">Demonstration</a></li>
-							<li><a href="{SITEURL}grid/" class="{URL-grid}">Data Grid</a></li>
 						</ul>
 					</li>
+					<li><a href="{SITEURL}grid/" class="{URL-grid}">Data Grid</a></li>
 
 					</li>
 				</ul>
