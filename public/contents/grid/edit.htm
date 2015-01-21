@@ -1,1 +1,37 @@
-test
+<h2>{book_title}</h2>
+
+<form>
+	<div class="form-box">
+		<div class="label">Title</div>
+		<div class="content">
+			<input type="text" name="title" value="{book_title}" class="span-2">
+		</div>
+	</div> <!-- .form-box -->
+	<div class="form-box float-left">
+		<div class="label">Author</div>
+		<div class="content">
+			<input type="text" name="author" value="{book_author}">
+		</div>
+	</div> <!-- .form-box -->
+	<div class="form-box float-left">
+		<div class="label">Email</div>
+		<div class="content">
+			<input type="text" name="author_email" value="{book_author_email}">
+		</div>
+	</div> <!-- .form-box -->
+
+	<div class="form-box float-left">
+		<div class="label">Genre</div>
+		<div class="content">
+			<select name="fk_gen_id">
+				<option value="">Select Genre</option>
+				<!-- BEGIN genres -->
+				<option value="{gen_id}" {gen_selected}>{gen_name}</option>
+				<!-- END genres -->
+			</select>
+		</div>
+	</div> <!-- .form-box -->
+
+
+
+</form>

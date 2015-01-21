@@ -1,6 +1,4 @@
 <?php
-
-$qry = new Lazy\DataController;
 $sql = 'SELECT
 	tbl_books.book_id,
 	tbl_books.book_title,

@@ -14,17 +14,17 @@
 		<div id="header-right" class="float-right">
 			<div id="login-info"></div>
 			<div id="header-help"></div>
-		</div>
+		</div> <!-- #header-right -->
 		<div class="clear"></div>
-	</div>
+	</div> <!-- #header -->
 	<div id="subheader">
 		<div class="sidebar float-left"></div>
 		<div id="subheader-text">
 			<div class="page-title">{PAGE_TITLE}</div>
 			<div class="clear"></div>
-		</div>
+		</div> <!-- #subheader-text -->
 		<div class="clear"></div>
-	</div>
+	</div> <!-- #subheader -->
 	<div id="innerwrap">
 		<div id="sidebar">
 			<div id="nav">
@@ -56,18 +56,18 @@
 
 					</li>
 				</ul>
-			</div>
-		</div>
+			</div> <!-- #nav -->
+		</div> <!-- #sidebar -->
 
 		<div id="contents">
 			{CONTENTS}
 			{readme}
-		</div>
+		</div> <!-- #contents -->
 		<div class="clear"></div>
-	</div>
+	</div> <!-- #innerwrap -->
 	<div id="footer">
 		 Debug information: <span class="debug"> HTML file: ({CONTENTS_PATH}/{CONTENTS_FILENAME}.htm) | PHP file: ({php_file}) | Readme file: ({readme_file})</span>
-	</div>
-</div>
+	</div> <!-- #footer -->
+</div> <!-- #wrapper -->
 </body>
 </html>

@@ -9,7 +9,7 @@ $header-height: 42px;
 $footer-height: 25px;
 
 
-body{
+body {
 	background: $box-background;
 	font-family: Tahoma, Georgia, Verdana;
 	color: $font-color;
@@ -18,56 +18,61 @@ body{
 	height: 100%;
 }
 
-.clear{
+.clear {
 	clear: both;
 	height: 0px;
 	width: 0px;
 }
 
-div{
+div {
 	display: block;
 	margin: 0px;
 	padding: 0px;
 }
 
-p{
+form {
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
 	word-wrap: break-word;
 }
 
-pre{
+pre {
 	background: #eeeeee;
 	border-left: 3px solid #00cc00;
 	padding: 15px 0px;
 	margin: 0px 0px 0px 15px;
 }
 
-#wrapper{
+#wrapper {
 	margin: auto;
 	background: $main-background;
 	height: 100%;
 }
 
-#header{
+#header {
 	height: $header-height;
 	padding: 3px 3px 3px 20px;
 	border-bottom: 1px solid $border-color;
 }
 
-#subheader{
+#subheader {
 	height: $header-height;
 	background: $box-background;
 	border-bottom: 1px solid $border-color;
 	overflow: hidden;
 	width: 100%;
 
-	.sidebar{
+	.sidebar {
 		display: inline-block;
 		width: $sidebar-size;
 		border-right: 1px solid $border-color;
 		height: 100%;
 	}
 
-	#subheader-text{
+	#subheader-text {
 		display: inline-block;
 		height: 100%;
 		font-weight: bold;
@@ -76,19 +81,19 @@ pre{
 		width: 80%;
 
 
-		.page-title{
+		.page-title {
 			float: left;
 			font-size: 14pt;
 		}
 
-		.debug{
+		.debug {
 			float: right;
 			font-size: 9pt;
 		}
 	}
 }
 
-#innerwrap{
+#innerwrap {
 	width: 100%;
 	display: table;
 	height: calc(100% - 42px - 42px - 32px - 7px);
@@ -97,28 +102,28 @@ pre{
 	height: -webkit-calc(100% - 42px - 42px - 32px - 7px);
 }
 
-#sidebar{
+#sidebar {
 	width: $sidebar-size;
 	background: $box-background;
 	display: table-cell;
 	vertical-align: top;
 
-	#nav{
+	#nav {
 
 
-		li a.url-active{
+		li a.url-active {
 			background: #cccccc;
 		}
 
-		> ul{
+		> ul {
 			list-style:none;
 			margin:0px;
 			padding:0px;
 
-			li{
+			li {
 				border-bottom: 1px solid $border-color;
 
-				a{
+				a {
 					display: block;
 					text-decoration: none;
 					font-weight: bold;
@@ -126,20 +131,20 @@ pre{
 					padding: 5px 0px 5px 25px;
 				}
 
-				ul.submenu{
+				ul.submenu {
 					list-style: none;
 					margin: 0px 0px 0px 0px;
 					padding: 0px;
 					border-top: 1px solid $border-color;
 
-					li{
+					li {
 
-						a{
+						a {
 						padding-left: 50px;
 						}
 					}
 
-					li:last-child{
+					li:last-child {
 						border-bottom: none;
 					}
 
@@ -153,7 +158,7 @@ pre{
 	}
 }
 
-#contents{
+#contents {
 	border-bottom: 1px solid $border-color;
 	border-left: 1px solid $border-color;
 	background: #ffffff;
@@ -165,7 +170,7 @@ pre{
 	vertical-align: top;
 }
 
-#footer{
+#footer {
 	background: $box-background;
 	height: $footer-height;
 	border-top: 1px solid $box-background;
@@ -174,24 +179,24 @@ pre{
 	font-weight: bold;
 	text-align: right;
 
-	span{
+	span {
 		font-weight: normal;
 		font-size: 9pt;
 	}
 }
 
-#table{
+#table {
 	margin:20px 0px 0px 0px;
 
-	table{
+	table {
 
-		tr{
+		tr {
 
-			td{
+			td {
 				font-size: 10pt;
 				padding: 3px 10px;
 
-				a{
+				a {
 					color: $font-color;
 				}
 
@@ -202,20 +207,20 @@ pre{
 			}
 		}
 
-		tr.header{
+		tr.header {
 
-			td{
+			td {
 				font-weight: bold;
 			}
-			td.title{
+			td.title {
 				width: 220px;
 			}
 
-			td.author{
+			td.author {
 				width: 150px;
 			}
 
-			td.category{
+			td.category {
 				width: 100px;
 			}
 		}
@@ -223,44 +228,54 @@ pre{
 }
 
 
-#form{
+#form {
 
-	div{
+	div {
 		clear:both;
 
-		p{
+		p {
 			float:left;
 			font-size: 9pt;
 		}
 
-		p:nth-child(1){
+		p:nth-child(1) {
 			width: 120px;
 			text-align: right;
 		}
 
-		p:nth-child(2){
+		p:nth-child(2) {
 			width: 200px;
 			text-align: left;
 			padding-left: 10px;
 		}
 
-		p:nth-child(3){
+		p:nth-child(3) {
 			width: 180px;
 		}
 	}
 
-	div:after{
+	div:after {
 		display: block;
 		content: "";
 		clear: both;
 		height: 0;
 	}
 
-	.input-error{
+	.input-error {
 		background: pink;
 	}
 }
 
+.modal-contents {
+	h2 {
+		margin:3px 0px;
+		font-size: 16pt;
+
+		span {
+			font-size:10pt;
+		}
+	}
+}
 
 .button {
 	border: $border;
@@ -283,11 +298,11 @@ pre{
   visibility: hidden !important;
 }
 
-.float-left{
+.float-left {
 	float: left;
 }
 
-.float-right{
+.float-right {
 	float: right;
 }
 

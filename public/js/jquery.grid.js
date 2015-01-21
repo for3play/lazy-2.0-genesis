@@ -4,29 +4,27 @@
 	{
 		return this.each(function()
 		{
-			var obj = $(this);
-
-			var grid_header;
-			var grid_width;
-			var column_widths = new Array();
 			var config = {
 		         'autoload': true,
 		         'empty_message': 'No Records Found'
 		    };
+			var obj = $(this);
+			var header_grid;
+			var grid_width;
+			var column_widths = new Array();
 		    var grid_loading;
 		    var grid_empty;
 		    var init_row;
-		    var col_count
+		    var col_count;
 
 		    if (options){$.extend(config, options);}
 
 		    initGrid = function()
 		    {
 				$(obj).addClass('gen-grid');
-				var header_grid = $(obj).find('tr.header');														// set header_grid as tr.header
+				header_grid = $(obj).find('tr.header');															// set header_grid as tr.header
 				$(header_grid).find('td:last-child').width($(header_grid).find('td:last-child').width()+17);	// adjust last column to compensate scrollbar width
-				grid_width = $(header_grid).width(); 		  													// get width of entire table via header
-				$(obj).find('.grid-controls').css('width', grid_width - 2);										// set width of grid controls
+
 				col_count = $(header_grid).find('td').length;  													// get column count of header
 
 				$.each($(header_grid).find('td'), function(i, td){
@@ -54,6 +52,10 @@
 			{
 				$(obj).find('tr.init-row').remove();															// remove initialization row
 				$(obj).find('table').addClass('grid');															// add class grid to table
+				grid_width = $(header_grid).width(); 		  													// get width of entire table via header
+
+				var grid_controls = $(obj).find('.grid-controls');
+				$(grid_controls).css('width', grid_width - 2);													// set width of grid controls
 
 				// create container for inner grid for inner scroll
 				var container_grid = '<tr><td colspan='+col_count+' style="padding:0px"><div class="inner-grid-wrap"><table width="100%" cellpadding="0" cellspacing="0" border="0" class="inner-grid"></table></div></td></tr>';

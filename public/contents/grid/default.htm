@@ -10,6 +10,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="{SITEURL}theme/css/grid.css">
+<link rel="stylesheet" type="text/css" href="{SITEURL}theme/css/forms.css">
 <script type="text/javascript" src="{SITEURL}js/modal.js"></script>
 <script type="text/javascript" src="{SITEURL}js/jquery.grid.js"></script>
 <script type="text/javascript" src="{SITEURL}js/jquery-ui.min.js"></script>
@@ -20,7 +21,7 @@ $(document).ready(function(){
 });
 </script>
 
-<a href="#" class="button display-modal">Add New</a>
+<a href="{SITEURL}{uri}/new/" class="button display-modal" title="Add New Record">Add New</a>
 <br><br>
 <div class="grid-test">
 	<table cellpadding="0" cellspacing="0" border="0">
@@ -34,13 +35,11 @@ $(document).ready(function(){
 	      <td>
 	      	<span class="book_title"></span>
 	      	<div class="quicklinks"><a href="{SITEURL}{uri}/edit/?id=" class="book_id display-modal" title="Edit Record">Edit</a></div>
-
 	      </td>
 	      <td><span class="book_author"></span></td>
 	      <td><span class="book_author_email"></span></td>
 	      <td><span class="gen_name"></span></td>
 	    </tr>
-
     </table>
 
 	<div class="grid-controls">
@@ -65,3 +64,4 @@ $(document).ready(function(){
     <div class="clear"></div>
     <div class="modal-status"></div>
 </div>
+

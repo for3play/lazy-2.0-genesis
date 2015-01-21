@@ -1,0 +1,56 @@
+@import '_import';
+$border-color: #d5d4d9;
+$border: 1px solid $border-color;
+
+form, #form, .form {
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+
+	.form-box {
+		margin: 0px 0px 10px 0px;
+		clear: both;
+
+		.label {
+			font-size: 8pt;
+			font-weight: bold;
+			border-top: $border;
+			border-right: $border;
+			border-left: $border;
+			padding: 1px 5px;
+			display: inline;
+			@include gradient;
+			@include border-top-right-radius(3px);
+			@include border-top-left-radius(3px);
+			text-shadow: 0 2px 0 #ffffff;
+		}
+
+		.content {
+			clear: both;
+			padding: 7px 5px;
+			border: 1px solid $border-color;
+			display: table-cell;
+			@include gradient-reverse;
+		}
+
+		input, select {
+			border: $border;
+			font-family: Tahoma, Georgia, Verdana;
+			font-size: 9pt;
+			padding: 2px;
+			width: 140px;
+		}
+
+		input.span-2, select.span-2 {
+			width: 300px;
+		}
+	}
+
+	.form-box.float-left {
+		clear: none;
+		float: left;
+		margin-right: 8px;
+	}
+
+
+
+}
