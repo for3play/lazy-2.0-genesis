@@ -62,15 +62,15 @@ $inner_grid_height: 400px;
 
 	.grid-controls {
 		@include gradient-reverse;
-		border-bottom:1px solid #AAAAAA;
-		border-left:1px solid #AAAAAA;
-		border-right:1px solid #AAAAAA;
-		margin-top:-1px;
-		font-size:9pt;
-		color:#444444;
+		border-bottom: $border;
+		border-left: $border;
+		border-right: $border;
+		margin-top: -1px;
+		font-size: 9pt;
+		color: #444444;
 
 		.pad {
-			padding:10px;
+			padding: 10px;
 		}
 
 		a.page-link, a.go-page {
@@ -78,13 +78,13 @@ $inner_grid_height: 400px;
 		}
 
 		input.gotopage {
-			width:35px;
-			height:23px;
-			margin:0px 5px 0px 0px;
+			width: 35px;
+			height: 23px;
+			margin: 0px 5px 0px 0px;
 			@include border-radius(0px);
 			border: $border;
-			font-family:Georgia, "Times New Roman", Times, serif;
-			font-size:9pt;
+			font-family: Georgia, "Times New Roman", Times, serif;
+			font-size: 9pt;
 			@include gradient;
 		}
 
@@ -162,7 +162,7 @@ $inner_grid_height: 400px;
 		tr.grid-row.row-alt-color {
 
 			td {
-				background: #e0e0e0;
+				@include gradient;
 			}
 		}
 

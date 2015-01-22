@@ -110,7 +110,6 @@ pre {
 
 	#nav {
 
-
 		li a.url-active {
 			background: #cccccc;
 		}
@@ -275,15 +274,6 @@ pre {
 			font-size:10pt;
 		}
 	}
-}
-
-.button {
-	border: $border;
-	padding: 3px 5px;
-	color: #666666;
-	text-decoration: none;
-	@include border-radius(3px);
-	@include gradient-reverse;
 }
 
 .ui-widget {

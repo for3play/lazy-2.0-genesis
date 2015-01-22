@@ -1,4 +1,4 @@
-@import '_import';
+@import "_import";
 $border-color: #d5d4d9;
 $border: 1px solid $border-color;
 
@@ -36,12 +36,26 @@ form, #form, .form {
 			border: $border;
 			font-family: Tahoma, Georgia, Verdana;
 			font-size: 9pt;
-			padding: 2px;
+			padding: 2px 3px;
 			width: 140px;
+			@include border-top-left-radius(5px);
+			@include border-bottom-right-radius(5px);
+		}
+
+		select {
+			padding: 1px 2px;
 		}
 
 		input.span-2, select.span-2 {
 			width: 300px;
+		}
+
+		input.span-half, select.span-half {
+			width: 60px;
+		}
+
+		input.error, select.error {
+			background: #f8d9d1;
 		}
 	}
 
@@ -50,7 +64,13 @@ form, #form, .form {
 		float: left;
 		margin-right: 8px;
 	}
-
-
-
 }
+
+.modal-status {
+	display: block;
+    float: right;
+    font-size: 8pt;
+    margin: 11px 10px 0px 0px;
+    overflow: hidden;
+}
+

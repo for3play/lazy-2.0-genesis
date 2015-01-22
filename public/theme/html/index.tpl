@@ -1,10 +1,12 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="{SITEURL}theme/css/main.css">
+	<link rel="stylesheet" type="text/css" href="{SITEURL}theme/css/jquery-ui-1.11.2/jquery-ui.min.css">
+	<script type="text/javascript" src="{SITEURL}js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="{SITEURL}js/jquery-ui.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="{META_DESCRIPTION}" />
 	<meta name="keywords" content="{META_KEYWORDS}" />
-	<script type="text/javascript" src="{SITEURL}js/jquery-1.11.2.min.js"></script>
 	<title>{PAGE_TITLE}</title>
 </head>
 <body>

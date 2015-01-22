@@ -229,6 +229,8 @@ class DataController extends Database
 	{
 		if ($this->validateFields($post, $tableName, $prefix, $tranType, $addValid)) {
 			$tranType = strtolower($tranType);
+			$tranType = ( $tranType=='add' ) ? 'insert' : $tranType;
+			$tranType = ( $tranType=='edit' ) ? 'update' : $tranType;
 			$preSQL = ($tranType=='insert') ? 'INSERT INTO '.$tableName.' SET ' : 'UPDATE '.$tableName.' SET ';
 			$this->prepSQL = $preSQL.$this->prepareStatement($preSQL);
 			if ($tranType=='update') $this->prepSQL.=' WHERE '.$updateParam;

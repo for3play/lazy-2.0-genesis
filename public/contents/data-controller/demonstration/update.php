@@ -7,7 +7,7 @@
 		$_contents->setVariable('SITEURL-success', $app::$settings['SITEURL']);		// assign special value to display success message block
 		$_contents->setVariable('action', strtolower($post['action']));				// sets status type placeholder value
 	} else {
-		$formName = ((strtolower($post['action'])=='update')) ? 'edit.htm' : 'add.htm';
+		$formName = ((strtolower($post['action'])=='edit')) ? 'edit.htm' : 'add.htm';
 		$form = new \Lazy\Render($app::$route['path'], $formName);					// load edit.htm form again for display2
 		foreach ($post as $key=>$value) {
 			$form->setVariable($tablePrefix.$key, $value);							// assign post variables to form

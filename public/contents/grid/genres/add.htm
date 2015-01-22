@@ -1,0 +1,21 @@
+<script type="text/javascript" src="{SITEURL}js/form.js"></script>
+
+<form action="{SITEURL}{uri}/../../update">
+	<div class="form-box">
+		<div class="label">Name</div>
+		<div class="content">
+			<input type="text" name="name" value="{gen_name}" class="span-2">
+		</div>
+	</div> <!-- .form-box -->
+	<div class="form-box">
+		<div class="label">Description</div>
+		<div class="content">
+			<input type="text" name="description" value="{gen_description}" class="span-2">
+		</div>
+	</div> <!-- .form-box -->
+	<input type="hidden" name="action" value="{fileName}">
+	<input type="hidden" name="id" value="{gen_id}">
+	<input type="hidden" name="parent_grid" value="#grid_genres">
+	<input type="hidden" name="reload_grid" value="">
+	<input type="hidden" name="type" value="genres">
+</form>

@@ -1,0 +1,52 @@
+<script type="text/javascript" src="{SITEURL}js/form.js"></script>
+
+<h2>{book_title}</h2>
+<form action="{SITEURL}{uri}/../../update">
+	<div class="form-box">
+		<div class="label">Title</div>
+		<div class="content">
+			<input type="text" name="title" value="{book_title}" class="span-2">
+		</div>
+	</div> <!-- .form-box -->
+	<div class="form-box float-left">
+		<div class="label">Author</div>
+		<div class="content">
+			<input type="text" name="author" value="{book_author}">
+		</div>
+	</div> <!-- .form-box -->
+	<div class="form-box float-left">
+		<div class="label">Email</div>
+		<div class="content">
+			<input type="text" name="author_email" value="{book_author_email}">
+		</div>
+	</div> <!-- .form-box -->
+
+	<div class="form-box float-left">
+		<div class="label">Genre</div>
+		<div class="content">
+			<select name="fk_gen_id">
+				<option value="">Select Genre</option>
+				<!-- BEGIN genres -->
+				<option value="{gen_id}" {gen_selected}>{gen_name}</option>
+				<!-- END genres -->
+			</select>
+		</div>
+	</div> <!-- .form-box -->
+	<div class="form-box float-left">
+		<div class="label">Published</div>
+		<div class="content">
+			<input type="text" name="published" value="{book_published}" class="datepicker">
+		</div>
+	</div> <!-- .form-box -->
+	<div class="form-box">
+		<div class="label">Pages</div>
+		<div class="content">
+			<input type="text" name="pages" value="{book_pages}" class="span-half">
+		</div>
+	</div> <!-- .form-box -->
+	<input type="hidden" name="action" value="{fileName}">
+	<input type="hidden" name="id" value="{book_id}">
+	<input type="hidden" name="parent_grid" value="#grid_books">
+	<input type="hidden" name="reload_grid" value="">
+	<input type="hidden" name="type" value="books">
+</form>
