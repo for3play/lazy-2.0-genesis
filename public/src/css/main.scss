@@ -41,9 +41,14 @@ p {
 
 pre {
 	background: #eeeeee;
-	border-left: 3px solid #00cc00;
+	border-left: 5px solid #00cc00;
 	padding: 15px 0px;
 	margin: 0px 0px 0px 15px;
+	border-top: 1px solid #00cc00;
+	border-right: 1px solid #00cc00;
+	border-bottom: 1px solid #00cc00;
+	@include border-top-right-radius(5px);
+	@include border-bottom-right-radius(5px);
 }
 
 #wrapper {
