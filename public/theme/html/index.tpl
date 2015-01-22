@@ -54,7 +54,14 @@
 							<li><a href="{SITEURL}data-controller/demonstration/" class="{URL-data-controller.demonstration}{URL-data-controller.demonstration.edit}{URL-data-controller.demonstration.add}{URL-data-controller.demonstration.update}">Demonstration</a></li>
 						</ul>
 					</li>
-					<li><a href="{SITEURL}grid/" class="{URL-grid}">Data Grid</a></li>
+
+					<li><a href="#" class="">Case Studies</a>
+						<ul class="submenu">
+							<li><a href="{SITEURL}case-studies/grid/" class="{URL-case-studies.grid}">Data Grid</a></li>
+						</ul>
+					</li>
+
+
 
 					</li>
 				</ul>

@@ -32,6 +32,7 @@ $(document).ready(function()
 		e.preventDefault();
 	});
 
+
 	$(document).on('click', '.display-popup', function(e){
 		var newDialog = objDialog.clone();
 		$(newDialog).attr('title', $(this).attr('title'));
@@ -46,9 +47,23 @@ $(document).ready(function()
 	});
 })
 
+
+
+getData = function(url){
+	var url=url;
+	return $.ajax({
+		async: false,
+		url: url
+	});
+}
+
+
 openDialog = function(obj, url, options)
 {
+	var ajax = getData(url);
+	var obj = obj;
 	var config = {
+		 async: false,
 	     autoOpen: false,
 	     width: 400,
 	     resizable: false,
@@ -56,15 +71,14 @@ openDialog = function(obj, url, options)
 	};
 	if (options) {$.extend(config, options);}
 	$(obj).dialog(config);
-	var url=url;
-	$.ajax({
-		url: url,
-		success:function(data){
-			$(obj).find('.modal-contents').html(data);
-			$(obj).dialog('open');
-			$(obj).parent('.ui-dialog').find('.ui-dialog-buttonpane').append('<div class="modal-status"></div>');
-		}
-	});
+	$(obj).parent('.ui-dialog').find('.ui-dialog-buttonpane').append('<div class="modal-status"></div>');
+	ajax.success(function(data){
+		$(obj).find('.modal-contents').html(data);
+	})
+	$(obj).find('.modal-contents').find('form').append('<input type="hidden" value="'+url+'" style="display:none;" name="file-url">');
+	$(obj).dialog('open');
+	return $(obj).parent('.ui-dialog');
+
 }
 
 closeDialog = function(obj)
