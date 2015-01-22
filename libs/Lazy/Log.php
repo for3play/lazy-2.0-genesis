@@ -15,24 +15,24 @@ namespace Lazy;
 
 class Log
 {
-	public static $fileName;
-	public static $filePath;
+    public static $fileName;
+    public static $filePath;
 
-	public function __construct($filePath=null, $fileName=null)
-	{
-		if (isset($fileName)) self::$fileName=$fileName;
-		if (isset($filePath)) self::$filePath=$filePath;
-	}
+    public function __construct($filePath=null, $fileName=null)
+    {
+        if (isset($fileName)) self::$fileName=$fileName;
+        if (isset($filePath)) self::$filePath=$filePath;
+    }
 
-	public function append($string)
-	{
-		#echo  self::$filePath.'/'.self::$fileName;
-		file_put_contents(self::$filePath.'/'.self::$fileName, $string, FILE_APPEND | LOCK_EX);
-	}
+    public function append($string)
+    {
+        #echo  self::$filePath.'/'.self::$fileName;
+        file_put_contents(self::$filePath.'/'.self::$fileName, $string, FILE_APPEND | LOCK_EX);
+    }
 
-	public function createFile($file)
-	{
+    public function createFile($file)
+    {
 
-	}
+    }
 
 }

@@ -1,2 +1,2 @@
 <?php
-	$_theme->setBlank();
+    $_theme->setBlank();

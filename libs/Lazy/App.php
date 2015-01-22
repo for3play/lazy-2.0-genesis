@@ -15,8 +15,8 @@ namespace Lazy;
 
 class App extends BaseApp
 {
-	public function __call($method, $args)
-	{
+    public function __call($method, $args)
+    {
         if (isset($this->$method) === true) {
             $func = $this->$method; $func();
         }

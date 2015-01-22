@@ -16,18 +16,18 @@ use Exception;
 
 class Database extends \PDO
 {
-	use Debug;
-	public function __construct()
-	{
-		try {
-			$dsn = 'mysql'.':dbname='.DB_DBNAME.";host=".DB_HOSTNAME;
-			parent::__construct($dsn, DB_USERNAME, DB_PASSWORD);
-			$this->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-			$this->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
-		} catch (Exception $e) {
-		    Debug::error('Connection Settings', $e->getMessage(), '');
-		}
-	}
+    use Debug;
+    public function __construct()
+    {
+        try {
+            $dsn = 'mysql'.':dbname='.DB_DBNAME.";host=".DB_HOSTNAME;
+            parent::__construct($dsn, DB_USERNAME, DB_PASSWORD);
+            $this->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $this->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            Debug::error('Connection Settings', $e->getMessage(), '');
+        }
+    }
 
 
 }

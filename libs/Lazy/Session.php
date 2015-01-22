@@ -10,20 +10,20 @@ use Lazy\Routing;
 
 class Session implements \ArrayAccess
 {
-	private static $hostPath;
-	protected static $uniqid;
+    private static $hostPath;
+    protected static $uniqid;
 
-	public function __construct()
+    public function __construct()
     {
-		session_start();
-		$routes = new Routing;
-		$routeInfo = $routes->info();
-		self::$hostPath = $routeInfo['hostName'].$routeInfo['basePath'];
-		if (!isset($_SESSION[self::$hostPath])) {
-			$_SESSION[self::$hostPath]=uniqid();
-		}
-		self::$uniqid=$_SESSION[self::$hostPath];
-		foreach ($_SESSION[self::$uniqid] as $key => $value) {
+        session_start();
+        $routes = new Routing;
+        $routeInfo = $routes->info();
+        self::$hostPath = $routeInfo['hostName'].$routeInfo['basePath'];
+        if (!isset($_SESSION[self::$hostPath])) {
+            $_SESSION[self::$hostPath]=uniqid();
+        }
+        self::$uniqid=$_SESSION[self::$hostPath];
+        foreach ($_SESSION[self::$uniqid] as $key => $value) {
             $_SESSION[self::$uniqid][$key] = $value;
         }
         if (isset($_GET['session_clear'])){
@@ -43,7 +43,7 @@ class Session implements \ArrayAccess
         return '';
     }
 
-	public function offsetSet($offset, $data)
+    public function offsetSet($offset, $data)
     {
         if ($offset === null) {
             $_SESSION[self::$uniqid][] = $data;
@@ -54,17 +54,17 @@ class Session implements \ArrayAccess
 
     public function offsetGet($offset)
     {
-    	return $_SESSION[self::$uniqid][$offset];
+        return $_SESSION[self::$uniqid][$offset];
     }
 
     public function offsetExists($offset)
     {
-    	return isset($_SESSION[self::$uniqid][$offset]);
+        return isset($_SESSION[self::$uniqid][$offset]);
     }
 
     public function offsetUnset($offset)
     {
-    	unset($_SESSION[self::$uniqid][$offset]);
+        unset($_SESSION[self::$uniqid][$offset]);
     }
 
 
