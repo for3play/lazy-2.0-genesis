@@ -38,7 +38,7 @@ class DataController extends Database
 	public function __construct()
 	{
 		parent::__construct();
-		$this->numArray = array('float', 'bigint', 'int', 'tinyint', 'smallint', 'integer', 'real', 'double', 'decimal', 'numeric');
+		$this->numArray = ['float', 'bigint', 'int', 'tinyint', 'smallint', 'integer', 'real', 'double', 'decimal', 'numeric'];
 		$this->initCache();
 	}
 
@@ -65,10 +65,10 @@ class DataController extends Database
 			$opKey = strtolower(strstr(ltrim($sql), ' ', true));
 			switch($opKey) {
 				case 'insert':
-					$this->resultMsg=array('status'=>'success', 'action'=>'insert', 'lastid'=>parent::lastInsertId());
+					$this->resultMsg = ['status'=>'success', 'action'=>'insert', 'lastid'=>parent::lastInsertId()];
 					break;
 				case 'update':
-					$this->resultMsg=array('status'=>'success', 'action'=>'update', 'affected_rows'=>$count);
+					$this->resultMsg = ['status'=>'success', 'action'=>'update', 'affected_rows'=>$count];
 					break;
 			}
 			return $result;
@@ -86,10 +86,10 @@ class DataController extends Database
 			$opKey = strtolower(strstr(ltrim($this->prepSQL), ' ', true));
 			switch($opKey) {
 				case 'insert':
-					$this->resultMsg=array('status'=>'success', 'action'=>'insert', 'lastid'=>parent::lastInsertId());
+					$this->resultMsg= ['status'=>'success', 'action'=>'insert', 'lastid'=>parent::lastInsertId()];
 					break;
 				case 'update':
-					$this->resultMsg=array('status'=>'success', 'action'=>'update');
+					$this->resultMsg= ['status'=>'success', 'action'=>'update'];
 					break;
 			}
 			return $result;
@@ -102,7 +102,7 @@ class DataController extends Database
 	{
 		if (is_null($sql)) Debug::show('Empty SQL Statement. usage: $obj->getRecords(sql_statement, optional page_array(recPerPage=>#, currPage=>currentPage)');
 		$sql = preg_replace( '/\s+/', ' ', $sql);
-		$resultSet = array();
+		$resultSet = [];
 		if (!is_null($paging)) {
 			$currPage = (is_numeric($paging['currPage'])) ? $paging['currPage'] : 1;
 			$recPerPage = $paging['recPerPage'];
@@ -116,7 +116,7 @@ class DataController extends Database
 		$sql = mysql_real_escape_string($sql);
 		$rowSet = $this->query($sql)->fetchAll();
 		$rowCount = count($rowSet);
-		$info = array('totalRecords'=>$totalRecords, 'recordCount'=>$rowCount, 'currentPage'=>$currPage, 'totalPages'=>$totalPages);
+		$info = ['totalRecords'=>$totalRecords, 'recordCount'=>$rowCount, 'currentPage'=>$currPage, 'totalPages'=>$totalPages];
 		$resultSet['info'] = $info;
 		$resultSet['data'] = $rowSet;
 		return $resultSet;
@@ -136,7 +136,7 @@ class DataController extends Database
 
 	private function getSchema()
 	{
-		$db_schema = array();
+		$db_schema = [];
 		if (is_null($this->tableName)) Debug::error('No Assigned Table','Assign tablename: $DataModel->tableName = &quot;&lt;table name&gt&quot;');
 		$db_schema = unserialize(self::$db_cache->get('DB_SCHEMA'));
 		if (!(is_null($db_schema[$this->tableName]))) {
@@ -155,8 +155,8 @@ class DataController extends Database
 		$this->tableName = $tableName;
 		$this->getSchema();
 		$this->status = 'success';
-		$this->errors = array();
-		$this->tableFields = array();
+		$this->errors = [];
+		$this->tableFields = [];
 		$fields='';
 		$sql = '';
 		$this->tablePrefix = $prefix;
@@ -170,7 +170,7 @@ class DataController extends Database
 			if ($scheme['Key']!='PRI'&&$scheme['Type']!='timestamp') {
 				if($scheme['Null']=='NO') {
 					if ((!(isset($value)))||(!(strlen($value)>0))) {
-						$error = array('field'=>$scheme['Field'], 'label'=>$field, 'error'=>'required', 'errorMessage'=>'Required Field');
+						$error = ['field'=>$scheme['Field'], 'label'=>$field, 'error'=>'required', 'errorMessage'=>'Required Field'];
 						$this->status = 'error';
 						array_push($this->errors, $error);
 					}
@@ -179,7 +179,7 @@ class DataController extends Database
 					if(strlen($value)>0) {
 						$value = preg_replace("/[^0-9.]/", "", $value);
 						if(!(is_numeric($value))) {
-							$error = array('field'=>$scheme['Field'], 'label'=>$field, 'error'=>'numeric', 'errorMessage'=>'Must be Numeric');
+							$error = ['field'=>$scheme['Field'], 'label'=>$field, 'error'=>'numeric', 'errorMessage'=>'Must be Numeric'];
 							$this->status = 'error';
 							array_push($this->errors, $error);
 						}
@@ -193,7 +193,7 @@ class DataController extends Database
 				switch ($key) {
 					case 'EMAIL':
 						if (!filter_var($post[$value], FILTER_VALIDATE_EMAIL)) {
-							$error = array('field'=>$prefix.$value, 'label'=>$value, 'error'=>'format', 'errorMessage'=>'Must be a Valid Email');
+							$error = ['field'=>$prefix.$value, 'label'=>$value, 'error'=>'format', 'errorMessage'=>'Must be a Valid Email'];
 							$this->status = 'error';
 							array_push($this->errors, $error);
 						}
@@ -201,7 +201,7 @@ class DataController extends Database
 
 					case 'MATCH':
 						if ($post[$value[0]]!=$post[$value[1]]) {
-							$error = array('field'=>$prefix.$value[0], 'label'=>$value[1], 'error'=>'format', 'errorMessage'=>$value[2]);
+							$error = ['field'=>$prefix.$value[0], 'label'=>$value[1], 'error'=>'format', 'errorMessage'=>$value[2]];
 							$this->status = 'error';
 							array_push($this->errors, $error);
 						}
@@ -209,7 +209,7 @@ class DataController extends Database
 
 					case 'REQUIRED':
 						if (strlen($post[$value]<=0)) {
-							$error = array('field'=>$prefix.$value, 'label'=>$value, 'error'=>'required', 'errorMessage'=>'Required Field');
+							$error = ['field'=>$prefix.$value, 'label'=>$value, 'error'=>'required', 'errorMessage'=>'Required Field'];
 							$this->status = 'error';
 							array_push($this->errors, $error);
 						}
@@ -220,7 +220,7 @@ class DataController extends Database
 			}
 		}
 		$this->sql = substr($sql, 0, strlen($sql)-2);
-		$this->resultMsg = ($this->status=='success') ? array('status'=>'success','table'=>$tableName, 'action'=>$tranType) : array('status'=>'fail','table'=>$tableName, 'action'=>$tranType, 'errors'=>$this->errors);
+		$this->resultMsg = ($this->status=='success') ? ['status'=>'success','table'=>$tableName, 'action'=>$tranType] : ['status'=>'fail','table'=>$tableName, 'action'=>$tranType, 'errors'=>$this->errors];
 		return ($this->status=='success') ? true : false;
 
 	}
@@ -254,10 +254,10 @@ class DataController extends Database
 	{
 		if (!isset(self::$db_cache)) {
 			$cache_dir = (defined('CACHE_DIR')) ? CACHE_DIR : '_tmp/';
-			$options = array(
+			$options = [
 			    'cacheDir' => $cache_dir,
 			    'lifeTime' => null
-			);
+			];
 			self::$db_cache = new Cache($options);
 		}
 		if (!(self::$db_cache->get('DB_SCHEMA'))) {

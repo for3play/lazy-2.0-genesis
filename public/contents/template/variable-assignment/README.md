@@ -33,11 +33,11 @@ Array Parsing
 You can also pass associative arrays to the Render Object by passing an array object to the `->setVariable()` method.
 
 <pre>
-	$array = array(
+	$array = [
 		'color'=>'brown'.
 		'animal'=>fox,
 		'animal2'=>dog
-	);
+	];
 
 	$_contents->setVariable($array);
 </pre>

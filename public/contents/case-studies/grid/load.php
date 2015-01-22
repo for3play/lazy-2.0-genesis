@@ -20,7 +20,7 @@ if ($type=='books') {
 	FROM tbl_genres ORDER BY gen_name ASC';								// raw SQL query to select genres
 
 }
-	$paging = array('currPage'=>$_GET['page'], 'recPerPage'=>10);			 // optional parameter to set the returns in pages
+	$paging = ['currPage'=>$_GET['page'], 'recPerPage'=>10];			 // optional parameter to set the returns in pages
 	$records = $qry->getRecords($sql, $paging);							  // returns associative array [info, data]
 	$app->json_encode($records);
 

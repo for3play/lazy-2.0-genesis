@@ -6,7 +6,7 @@ define('URL', 'http://'.$_SERVER['HTTP_HOST'].str_replace('index.php', '', $_SER
 define('APP_PATH', dirname(__FILE__));
 define('CACHE_DIR', '_tmp/');
 
-$settings=[
+$settings = [
 	'SITE_TITLE'=>'LAZY 2.0 (Genesis)',
 	'PAGE_TITLE'=>'LAZY 2.0 (Genesis)',
 	'META_DESCRIPTION'=>'LAZY 2.0 (Genesis)',
@@ -15,7 +15,7 @@ $settings=[
 	'IMAGEPATH'=>URL.'images/',
 ];
 
-$templateConfig=[
+$templateConfig = [
 	'templateDir'=>'theme/html/', #default directory for main template
 	'templateFile'=>'index.tpl', #default file for template
 	'contentsPath'=>'contents/', #default path for the contents files
@@ -27,7 +27,7 @@ $templateConfig=[
 	'theme'=>'DEFAULT' #use template - to be implemented
 ];
 
-switch($_SERVER['HTTP_HOST']) {
+switch ($_SERVER['HTTP_HOST']) {
 	case 'localhost':
 		define('DB_HOSTNAME','localhost');
 		define('DB_USERNAME','root');

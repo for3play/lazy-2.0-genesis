@@ -3,7 +3,7 @@ $post = $_POST;											// get $_POST variables
 $type = $post['type'];
 
 if($type =='books') {
-	$addValid = array('EMAIL'=>'author_email');				// add email format validation
+	$addValid = ['EMAIL'=>'author_email'];				// add email format validation
 	$tablePrefix = 'book_';									// set table prefix for books
 } else {
 	$tablePrefix = 'gen_';									// set table prefix for genres

@@ -35,7 +35,7 @@ class BaseApp
 	private static $path;
 	private static $siteURL;
 	private static $uri;
-	private static $templateConfig=[
+	private static $templateConfig = [
 		'templateDir'=>'theme/html/', #default directory for main template
 		'templateFile'=>'index.tpl', #default file for template
 		'contentsPath'=>'contents', #default path for the contents files
@@ -160,7 +160,7 @@ class BaseApp
 		$path = str_replace('//', '/', $path);
 		self::$path=$path;
 		self::$fileName=$fileName;
-		return array('path'=>$path, 'fileName'=>$fileName);
+		return ['path'=>$path, 'fileName'=>$fileName];
 	}
 
 	/**

@@ -2,9 +2,9 @@
 
 $id = 'DB_SCHEMA';
 
-$options = array(
+$options = [
     'cacheDir' => '_tmp/'
-);
+];
 
 $cache = new Lazy\Cache($options);
 $data = $cache->get($id);

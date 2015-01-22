@@ -25,7 +25,7 @@ trait Debug
 	 */
 	public static function info()
 	{
-		$debugInfo = array('settings'=>static::$settings, 'config'=>static::$templateConfig, 'routeInfo'=>static::$routeInfo);
+		$debugInfo = ['settings'=>static::$settings, 'config'=>static::$templateConfig, 'routeInfo'=>static::$routeInfo];
 		echo json_encode($debugInfo, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 	}
 
@@ -39,7 +39,7 @@ trait Debug
 	 */
 	public static function error($code, $message, $string=null, $break=true)
 	{
-		$error = array('status'=>'error', 'error'=>$code, 'message'=>$message, 'code'=>$string);
+		$error = ['status'=>'error', 'error'=>$code, 'message'=>$message, 'code'=>$string];
 		header('Content-Type: application/json');
 		echo json_encode($error, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 		die();

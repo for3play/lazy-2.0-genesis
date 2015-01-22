@@ -11,7 +11,7 @@
 	tbl_genres ON tbl_books.book_fk_gen_id = tbl_genres.gen_id
 	ORDER BY book_title ASC';												// raw SQL query to select records
 
-	$paging = array('currPage'=>$_GET['page'], 'recPerPage'=>5);			 // optional parameter to set the returns in pages
+	$paging = ['currPage'=>$_GET['page'], 'recPerPage'=>5];			 // optional parameter to set the returns in pages
 	$records = $qry->getRecords($sql, $paging);							  // returns associative array [info, data]
 	$_contents->setVariable($records['info']);							   // assign "info" values to placeholders
 	if ($records['info']['recordCount']) {								// returns total record count in current page

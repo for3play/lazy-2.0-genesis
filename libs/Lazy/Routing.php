@@ -46,7 +46,7 @@ class Routing
      */
 	public function routes()
 	{
-		$routes = array();
+		$routes = [];
 		$routes_array = explode('/', self::$uri);
 		foreach ($routes_array as $route) {
 			if (trim($route)!='') {
@@ -62,7 +62,7 @@ class Routing
      */
 	public function info()
 	{
-		$info = array('hostName'=>$this->hostName, 'basePath'=>$this->basePath, 'uri'=>self::$uri, 'route'=>self::$routes);
+		$info = ['hostName'=>$this->hostName, 'basePath'=>$this->basePath, 'uri'=>self::$uri, 'route'=>self::$routes];
 		return $info;
 	}
 

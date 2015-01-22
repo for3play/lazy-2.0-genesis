@@ -34,12 +34,12 @@ Assigning session variables can be invoked using `$_session['name'] = 'value'`.
 Arrays should have keys instantiated prior to being passed to the `$_session` object. Example:
 
 <pre>
-	$array = array('var1'=>'value1', 'var2'=>'value2', ...);
+	$array = ['var1'=>'value1', 'var2'=>'value2', ...];
 	$_session['arrayHandler'] = $array;
 </pre>
 or
 <pre>
-	$array = array('var1', 'var2', ...);
+	$array = ['var1', 'var2', ...];
 	$_session['arrayHandler'] = $array;
 </pre>
 You can then retrieve or assign values to the `$_session` object via:

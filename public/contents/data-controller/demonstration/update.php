@@ -1,6 +1,6 @@
 <?php
 	$post = $_POST;											// get $_POST variables
-	$addValid = array('EMAIL'=>'author_email');				// add email format validation
+	$addValid = ['EMAIL'=>'author_email'];				// add email format validation
 	$tablePrefix = 'book_';									// set table prefix
 	if ($qry->generateSQL($post, 'tbl_books', $tablePrefix,	$post['action'], 'book_id='.$post['id'], $addValid)) {
 		$qry->execSQL();

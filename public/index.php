@@ -1,7 +1,7 @@
 <?php
 ob_start();
-$settings=array();
-$templateConfig=array();
+$settings=[];
+$templateConfig=[];
 require_once('config.php');
 use Lazy\App;
 

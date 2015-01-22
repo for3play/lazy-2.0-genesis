@@ -46,7 +46,7 @@ class TemplateRender
 
 	private static function postMeta()
 	{
-		$array = array('PAGE_TITLE', 'META_DESCRIPTION', 'META_KEYWORDS');
+		$array = ['PAGE_TITLE', 'META_DESCRIPTION', 'META_KEYWORDS'];
 		foreach ($array as $key) {
 			if (self::$_contents->blockExists($key)) {
 				self::$_contents->setCurrentBlock($key);
@@ -67,7 +67,7 @@ class TemplateRender
 
 	public static function getTemplates()
 	{
-		return array('_theme'=>&self::$_theme,'_contents'=>&self::$_contents)	;
+		return ['_theme'=>&self::$_theme,'_contents'=>&self::$_contents];
 	}
 
 }
