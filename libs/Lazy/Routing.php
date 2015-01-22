@@ -49,7 +49,7 @@ class Routing
 		$routes = [];
 		$routes_array = explode('/', self::$uri);
 		foreach ($routes_array as $route) {
-			if (trim($route)!='') {
+			if (trim($route) != '') {
 				array_push($routes, $route);
 			}
 		}

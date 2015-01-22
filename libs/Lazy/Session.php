@@ -27,7 +27,7 @@ class Session implements \ArrayAccess
             $_SESSION[self::$uniqid][$key] = $value;
         }
         if (isset($_GET['session_clear'])){
-            if ($_GET['session_clear']==1){
+            if ($_GET['session_clear'] == 1){
                 $_SESSION[self::$uniqid] = null;
             } else {
                 unset($_SESSION[self::$uniqid][$_GET['session_clear']]);

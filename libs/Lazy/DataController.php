@@ -108,7 +108,7 @@ class DataController extends Database
 			$recPerPage = $paging['recPerPage'];
 			$sqlSuffix = split(' FROM ', $sql, 2)[1];
 			$sqlCount = 'SELECT COUNT(*) as count FROM '.$sqlSuffix;
-			if(strpos(strtolower($sqlCount), 'group by')) $sqlCount = 'SELECT COUNT(*) as count FROM ('.$sqlCount.') as tbl_temp';
+			if (strpos(strtolower($sqlCount), 'group by')) $sqlCount = 'SELECT COUNT(*) as count FROM ('.$sqlCount.') as tbl_temp';
 			$totalRecords = (int)$this->query($sqlCount)->fetchAll()[0]['count'];
 			$totalPages = ceil(($totalRecords/$recPerPage));
 			$sql.=' LIMIT '.($currPage-1)*$recPerPage.','.$recPerPage;
@@ -167,9 +167,9 @@ class DataController extends Database
 			$field = str_replace($prefix, '', $scheme['Field']);
 			$value = $post[$field];
 
-			if ($scheme['Key']!='PRI'&&$scheme['Type']!='timestamp') {
-				if($scheme['Null']=='NO') {
-					if ((!(isset($value)))||(!(strlen($value)>0))) {
+			if ($scheme['Key'] != 'PRI'&&$scheme['Type']!='timestamp') {
+				if ($scheme['Null'] == 'NO') {
+					if ((!(isset($value))) || (!(strlen($value)>0))) {
 						$error = ['field'=>$scheme['Field'], 'label'=>$field, 'error'=>'required', 'errorMessage'=>'Required Field'];
 						$this->status = 'error';
 						array_push($this->errors, $error);
@@ -200,7 +200,7 @@ class DataController extends Database
 						break;
 
 					case 'MATCH':
-						if ($post[$value[0]]!=$post[$value[1]]) {
+						if ($post[$value[0]] != $post[$value[1]]) {
 							$error = ['field'=>$prefix.$value[0], 'label'=>$value[1], 'error'=>'format', 'errorMessage'=>$value[2]];
 							$this->status = 'error';
 							array_push($this->errors, $error);
@@ -233,7 +233,7 @@ class DataController extends Database
 			$tranType = ( $tranType=='edit' ) ? 'update' : $tranType;
 			$preSQL = ($tranType=='insert') ? 'INSERT INTO '.$tableName.' SET ' : 'UPDATE '.$tableName.' SET ';
 			$this->prepSQL = $preSQL.$this->prepareStatement($preSQL);
-			if ($tranType=='update') $this->prepSQL.=' WHERE '.$updateParam;
+			if ($tranType == 'update') $this->prepSQL.=' WHERE '.$updateParam;
 			return $this->prepSQL;
 		} else {
 			return false;
@@ -243,7 +243,7 @@ class DataController extends Database
 	private function prepareStatement($preSQL)
 	{
 		foreach ($this->schema as $scheme) {
-			if ($scheme['Key']!='PRI'&&$scheme['Type']!='timestamp') {
+			if (($scheme['Key'] != 'PRI') && ($scheme['Type'] != 'timestamp')) {
 				$fields .= $scheme['Field'].'=:'.str_replace($this->tablePrefix, '', $scheme['Field']).', ';
 			}
 		}

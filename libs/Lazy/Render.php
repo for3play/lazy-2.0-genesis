@@ -27,7 +27,7 @@ class Render extends \HTML_Template_ITX
 
 	public function __construct($filePath, $fileName)
 	{
-		if (strlen($fileName)>0){
+		if (strlen($fileName) > 0){
 			$this->setHTML($filePath, $fileName);
 			$this->replaceDefaults();
 		}
