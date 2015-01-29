@@ -8,7 +8,6 @@
 namespace Lazy;
 use Lazy\Render;
 
-
 /**
  * TemplateRender is the application template controller class for the Lazy framework. It extends the Render class of the lazy Library.
  * @author Macky Mac <for3play@gmail.com>

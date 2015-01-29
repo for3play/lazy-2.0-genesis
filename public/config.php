@@ -28,7 +28,7 @@ $templateConfig = [
 ];
 
 switch ($_SERVER['HTTP_HOST']) {
-    case 'localhost':
+    case 'localhost:8081':
         define('DB_HOSTNAME','localhost');
         define('DB_USERNAME','root');
         define('DB_PASSWORD','mysql');

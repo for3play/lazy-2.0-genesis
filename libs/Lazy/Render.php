@@ -50,24 +50,25 @@ class Render extends \HTML_Template_ITX
         $this->setVariable($currURL, 'url-active');
     }
 
+    /**
+     * Set the HTML Template of the current Render object to use a blank template
+     */
     public function setBlank()
     {
         $this->setTemplate(self::$blankTemplate);
     }
 
+    /**
+     * Set the HTML Template of the current Render object to the specified file
+     * @param string $filePath relative path of the template
+     * @param string $fileName filename of the template
+     */
     public function setHTML($filePath, $fileName)
     {
         $this->HTML_Template_ITX($filePath);
         if ($this->loadTemplatefile($fileName, true, true)) {
         } else {
             $this->setTemplate(self::$missingTemplate);
-        }
-    }
-
-    public function parseArray($array)
-    {
-        foreach ($array as $key=>$value) {
-            $this->setVariable($key, $value);
         }
     }
 
