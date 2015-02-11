@@ -1,14 +1,6 @@
 $(document).ready(function()
 {
-	var dialogHTML = `
-	<div class="dialog-dummy" title=" &nbsp; ">
-	<div class="scroll">
-        <div class="modal-contents">
-
-        </div>
-    </div>
-    <div class="clear"></div>
-	</div>`;
+	var dialogHTML = '<div class="dialog-dummy" title=" &nbsp; "><div class="scroll"><div class="modal-contents"></div></div><div class="clear"></div></div>';
 
 	$(dialogHTML).appendTo('html body');
 
