@@ -134,7 +134,7 @@ class DataController extends Database
             $totalPages = ceil(($totalRecords/$recPerPage));
             $sql.=' LIMIT '.($currPage-1)*$recPerPage.','.$recPerPage;
         }
-        $sql = mysql_real_escape_string($sql);
+        #$sql = mysql_real_escape_string($sql);
         $rowSet = $this->query($sql)->fetchAll();
         $rowCount = count($rowSet);
         $info = ['totalRecords'=>$totalRecords, 'recordCount'=>$rowCount, 'currentPage'=>$currPage, 'totalPages'=>$totalPages];
@@ -151,7 +151,7 @@ class DataController extends Database
      */
     public function getRecord($sql, $jsonFormat=false)
     {
-        $sql = mysql_real_escape_string($sql);
+        #$sql = mysql_real_escape_string($sql);
         $resultSet = $this->query($sql)->fetchAll()[0];
         if (count($resultSet)) {
             return $resultSet;
