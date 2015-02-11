@@ -53,7 +53,7 @@ class DataController extends Database
      */
     public function query($sql)
     {
-        $sql = mysql_real_escape_string($sql);
+        #$sql = mysql_real_escape_string($sql);
         try {
             return parent::query($sql);
         } catch (Exception $e) {
@@ -69,7 +69,7 @@ class DataController extends Database
     public function exec($sql)
     {
         try {
-            $sql = mysql_real_escape_string($sql);
+            #$sql = mysql_real_escape_string($sql);
             $count=parent::exec($sql);
             $opKey = strtolower(strstr(ltrim($sql), ' ', true));
             switch($opKey) {
@@ -93,7 +93,8 @@ class DataController extends Database
     public function execSQL()
     {
         try {
-            $sql = mysql_real_escape_string($this->prepSQL);
+            #$sql = mysql_real_escape_string($this->prepSQL);
+            $sql = $this->prepSQL;
             $this->qry = parent::prepare($sql);
             $this->qry->execute($this->tableFields);
             $opKey = strtolower(strstr(ltrim($this->prepSQL), ' ', true));
