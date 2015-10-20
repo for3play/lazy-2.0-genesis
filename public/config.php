@@ -27,6 +27,7 @@ $templateConfig = [
     'theme'=>'DEFAULT' #use template - to be implemented
 ];
 
+define('URL', 'http://'.$_SERVER['HTTP_HOST'].str_replace('index.php', '', $_SERVER['PHP_SELF']));
 switch ($_SERVER['HTTP_HOST']) {
     case 'localhost:8081':
         define('DB_HOSTNAME','localhost');
@@ -41,6 +42,15 @@ switch ($_SERVER['HTTP_HOST']) {
         define('DB_USERNAME','root');
         define('DB_PASSWORD','');
         define('DB_DBNAME','lazy_genesis');
+        define('INCLUDEPATH','../libs/');
+        break;
+
+
+    case 'dev.mackamandag.net':
+        define('DB_HOSTNAME','localhost');
+        define('DB_USERNAME','for3play_genesis');
+        define('DB_PASSWORD','Jd;39pu6(aO1');
+        define('DB_DBNAME','for3play_genesis');
         define('INCLUDEPATH','../libs/');
         break;
 
