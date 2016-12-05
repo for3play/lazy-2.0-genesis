@@ -12,6 +12,7 @@ if (strlen($folderURI)==0) {
 $readmeFile = str_replace('//','/', 'contents/'.$folderURI.'/README.md');
 
 $readme = '';
+
 $parsedown = new Parsedown;
 
 if (file_exists($readmeFile)) {
