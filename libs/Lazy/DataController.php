@@ -127,7 +127,7 @@ class DataController extends Database
         if (!is_null($paging)) {
             $currPage = (is_numeric($paging['currPage'])) ? $paging['currPage'] : 1;
             $recPerPage = $paging['recPerPage'];
-            $sqlSuffix = split(' FROM ', $sql, 2)[1];
+            $sqlSuffix = explode(' FROM ', $sql, 2)[1];
             $sqlCount = 'SELECT COUNT(*) as count FROM '.$sqlSuffix;
             if (strpos(strtolower($sqlCount), 'group by')) $sqlCount = 'SELECT COUNT(*) as count FROM ('.$sqlCount.') as tbl_temp';
             $totalRecords = (int)$this->query($sqlCount)->fetchAll()[0]['count'];
