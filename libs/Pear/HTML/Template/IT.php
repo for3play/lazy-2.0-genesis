@@ -1089,11 +1089,15 @@ class HTML_Template_IT
         $content = fread($fh, $fsize);
         fclose($fh);
 
+        return $content;
+
+/*
         return preg_replace(
             "#<!-- INCLUDE (.*) -->#ime",
             "\$this->getFile('\\1')",
             $content
         );
+    */
     } // end func getFile
 
     /**
