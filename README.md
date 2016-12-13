@@ -17,6 +17,7 @@ Basic Overview
 * Automated Data validation
 * Automated SQL generation for update and inserts
 * Separate layout and contents template which can be customized separate from each other
+* **PHP 7 COMPATIBLE**
 
 Who should use this?
 ---

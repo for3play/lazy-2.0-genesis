@@ -1,73 +1,278 @@
-.button { border: 1px solid #aaaaaa; padding: 3px 5px; color: #666666; text-decoration: none; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; border-radius: 3px; background: #ffffff; /* Old browsers */ background: -moz-linear-gradient(top, #ffffff 0%, #e0e0e0 100%); /* FF3.6+ */ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #e0e0e0)); /* Chrome,Safari4+ */ background: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%); /* Chrome10+,Safari5.1+ */ background: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%); /* Opera 11.10+ */ background: -ms-linear-gradient(top, #ffffff 0%, #e0e0e0 100%); /* IE10+ */ background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%); /* W3C */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=0 ); /* IE6-9 */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/_import\.scss}line{font-family:\0000363}}
+.button {
+  border: 1px solid #aaaaaa;
+  padding: 3px 5px;
+  color: #666666;
+  text-decoration: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #e0e0e0));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%, #e0e0e0 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e0e0e0',GradientType=0 );
+  /* IE6-9 */ }
 
-.button:hover { border: 1px solid #666666; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/_import\.scss}line{font-family:\0000372}}
+.button:hover {
+  border: 1px solid #666666; }
 
-body { background: #f6f6f6; font-family: Tahoma, Georgia, Verdana; color: #000000; font-size: 10pt; margin: 0px; height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000312}}
+body {
+  background: #ffff;
+  font-family: Tahoma, Georgia, Verdana;
+  color: #000000;
+  font-size: 10pt;
+  margin: 0px;
+  height: 100%; }
 
-.clear { clear: both; height: 0px; width: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000321}}
+.clear {
+  clear: both;
+  height: 0px;
+  width: 0px; }
 
-div { display: block; margin: 0px; padding: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000327}}
+div {
+  display: block;
+  margin: 0px;
+  padding: 0px; }
 
-form { margin: 0px; padding: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000333}}
+form {
+  margin: 0px;
+  padding: 0px; }
 
-p { word-wrap: break-word; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000338}}
+p {
+  word-wrap: break-word; }
 
-pre { background: #eeeeee; border-left: 5px solid #00cc00; padding: 15px 0px; margin: 0px 0px 0px 15px; border-top: 1px solid #00cc00; border-right: 1px solid #00cc00; border-bottom: 1px solid #00cc00; -webkit-border-top-right-radius: 5px; -moz-border-top-right-radius: 5px; -ms-border-top-right-radius: 5px; border-top-right-radius: 5px; -webkit-border-bottom-right-radius: 5px; -moz-border-bottom-right-radius: 5px; -ms-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000342}}
+pre {
+  background: #eeeeee;
+  border-left: 5px solid #00cc00;
+  padding: 15px 0px;
+  margin: 0px 0px 0px 15px;
+  border-top: 1px solid #00cc00;
+  border-right: 1px solid #00cc00;
+  border-bottom: 1px solid #00cc00;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-top-right-radius: 5px;
+  -ms-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-bottom-right-radius: 5px;
+  -ms-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
 
-#wrapper { margin: auto; background: #ffffff; height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000354}}
+#wrapper {
+  margin: auto;
+  background: #ffffff;
+  height: 100%; }
 
-#header { height: 42px; padding: 3px 3px 3px 20px; border-bottom: 1px solid #d5d4d9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000360}}
+#header {
+  height: 42px;
+  padding: 3px 3px 3px 20px;
+  border-bottom: 1px solid #d5d4d9; }
 
-#subheader { height: 42px; background: #f6f6f6; border-bottom: 1px solid #d5d4d9; overflow: hidden; width: 100%; }
-#subheader .sidebar { display: inline-block; width: 220px; border-right: 1px solid #d5d4d9; height: 100%; }
-#subheader #subheader-text { display: inline-block; height: 100%; font-weight: bold; padding: 10px 0px 0px 15px; min-width: 700px; width: 80%; }
-#subheader #subheader-text .page-title { float: left; font-size: 14pt; }
-#subheader #subheader-text .debug { float: right; font-size: 9pt; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000366}}
+#subheader {
+  height: 42px;
+  background: #f6f6f6;
+  border-bottom: 1px solid #d5d4d9;
+  overflow: hidden;
+  width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000373}}
+  #subheader .sidebar {
+    display: inline-block;
+    width: 220px;
+    border-right: 1px solid #d5d4d9;
+    height: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000380}}
+  #subheader #subheader-text {
+    display: inline-block;
+    height: 100%;
+    font-weight: bold;
+    padding: 10px 0px 0px 15px;
+    min-width: 700px;
+    width: 80%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000389}}
+    #subheader #subheader-text .page-title {
+      float: left;
+      font-size: 14pt; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\0000394}}
+    #subheader #subheader-text .debug {
+      float: right;
+      font-size: 9pt; }
 
-#innerwrap { width: 100%; display: table; height: calc(100% - 42px - 42px - 32px - 7px); height: -o-calc(100% - 42px - 42px - 32px - 7px); height: -moz-calc(100% - 42px - 42px - 32px - 7px); height: -webkit-calc(100% - 42px - 42px - 32px - 7px); }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003101}}
+#innerwrap {
+  width: 100%;
+  display: table;
+  height: calc(100% - 42px - 42px - 32px - 7px);
+  height: -o-calc(100% - 42px - 42px - 32px - 7px);
+  height: -moz-calc(100% - 42px - 42px - 32px - 7px);
+  height: -webkit-calc(100% - 42px - 42px - 32px - 7px); }
 
-#sidebar { width: 220px; background: #f6f6f6; display: table-cell; vertical-align: top; }
-#sidebar #nav li a.url-active { background: #cccccc; }
-#sidebar #nav > ul { list-style: none; margin: 0px; padding: 0px; }
-#sidebar #nav > ul li { border-bottom: 1px solid #d5d4d9; }
-#sidebar #nav > ul li a { display: block; text-decoration: none; font-weight: bold; color: #000000; padding: 5px 0px 5px 25px; }
-#sidebar #nav > ul li ul.submenu { list-style: none; margin: 0px 0px 0px 0px; padding: 0px; border-top: 1px solid #d5d4d9; }
-#sidebar #nav > ul li ul.submenu li a { padding-left: 50px; }
-#sidebar #nav > ul li ul.submenu li:last-child { border-bottom: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003110}}
+#sidebar {
+  width: 220px;
+  background: #f6f6f6;
+  display: table-cell;
+  vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003118}}
+  #sidebar #nav li a.url-active {
+    background: #cccccc; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003122}}
+  #sidebar #nav > ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003127}}
+    #sidebar #nav > ul li {
+      border-bottom: 1px solid #d5d4d9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003130}}
+      #sidebar #nav > ul li a {
+        display: block;
+        text-decoration: none;
+        font-weight: bold;
+        color: #000000;
+        padding: 5px 0px 5px 25px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003138}}
+      #sidebar #nav > ul li ul.submenu {
+        list-style: none;
+        margin: 0px 0px 0px 0px;
+        padding: 0px;
+        border-top: 1px solid #d5d4d9; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003146}}
+        #sidebar #nav > ul li ul.submenu li a {
+          padding-left: 50px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003151}}
+        #sidebar #nav > ul li ul.submenu li:last-child {
+          border-bottom: none; }
 
-#contents { border-bottom: 1px solid #d5d4d9; border-left: 1px solid #d5d4d9; background: #ffffff; width: auto; display: table-cell; border-left: 1px solid #d5d4d9; margin-left: -1px; padding: 10px 20px; vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003165}}
+#contents {
+  border-bottom: 1px solid #d5d4d9;
+  border-left: 1px solid #d5d4d9;
+  background: #ffffff;
+  width: auto;
+  display: table-cell;
+  border-left: 1px solid #d5d4d9;
+  margin-left: -1px;
+  padding: 10px 20px;
+  vertical-align: top; }
 
-#footer { background: #f6f6f6; height: 25px; border-top: 1px solid #f6f6f6; overflow: hidden; padding: 5px 30px 0px 300px; font-weight: bold; text-align: right; }
-#footer span { font-weight: normal; font-size: 9pt; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003177}}
+#footer {
+  background: #f6f6f6;
+  height: 25px;
+  border-top: 1px solid #f6f6f6;
+  overflow: hidden;
+  padding: 5px 30px 0px 300px;
+  font-weight: bold;
+  text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003186}}
+  #footer span {
+    font-weight: normal;
+    font-size: 9pt; }
 
-#table { margin: 20px 0px 0px 0px; }
-#table table tr td { font-size: 10pt; padding: 3px 10px; }
-#table table tr td a { color: #000000; }
-#table table tr td a.page-active { font-weight: bold; text-decoration: none; }
-#table table tr.header td { font-weight: bold; }
-#table table tr.header td.title { width: 220px; }
-#table table tr.header td.author { width: 150px; }
-#table table tr.header td.category { width: 100px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003192}}
+#table {
+  margin: 20px 0px 0px 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003199}}
+  #table table tr td {
+    font-size: 10pt;
+    padding: 3px 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003203}}
+    #table table tr td a {
+      color: #000000; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003207}}
+    #table table tr td a.page-active {
+      font-weight: bold;
+      text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003216}}
+  #table table tr.header td {
+    font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003219}}
+  #table table tr.header td.title {
+    width: 220px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003223}}
+  #table table tr.header td.author {
+    width: 150px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003227}}
+  #table table tr.header td.category {
+    width: 100px; }
 
-#form div { clear: both; }
-#form div p { float: left; font-size: 9pt; }
-#form div p:nth-child(1) { width: 120px; text-align: right; }
-#form div p:nth-child(2) { width: 200px; text-align: left; padding-left: 10px; }
-#form div p:nth-child(3) { width: 180px; }
-#form div:after { display: block; content: ""; clear: both; height: 0; }
-#form .input-error { background: pink; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003237}}
+#form div {
+  clear: both; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003240}}
+  #form div p {
+    float: left;
+    font-size: 9pt; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003245}}
+  #form div p:nth-child(1) {
+    width: 120px;
+    text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003250}}
+  #form div p:nth-child(2) {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003256}}
+  #form div p:nth-child(3) {
+    width: 180px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003261}}
+#form div:after {
+  display: block;
+  content: "";
+  clear: both;
+  height: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003268}}
+#form .input-error {
+  background: pink; }
 
-.modal-contents h2 { margin: 3px 0px; font-size: 16pt; }
-.modal-contents h2 span { font-size: 10pt; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003274}}
+.modal-contents h2 {
+  margin: 3px 0px;
+  font-size: 16pt; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003278}}
+  .modal-contents h2 span {
+    font-size: 10pt; }
 
-.ui-widget { font-size: .9em !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003284}}
+.ui-widget {
+  font-size: .9em !important; }
 
-.ui-dialog .ui-dialog-buttonpane { padding-bottom: 0.1em !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003288}}
+.ui-dialog .ui-dialog-buttonpane {
+  padding-bottom: 0.1em !important; }
 
-.ui-dialog-titlebar-close { visibility: hidden !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003292}}
+.ui-dialog-titlebar-close {
+  visibility: hidden !important; }
 
-.float-left { float: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003296}}
+.float-left {
+  float: left; }
 
-.float-right { float: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Webs\/lazy2\/public\/src\/css\/main\.scss}line{font-family:\00003300}}
+.float-right {
+  float: right; }
 
 /*# sourceMappingURL=main.css.map */
