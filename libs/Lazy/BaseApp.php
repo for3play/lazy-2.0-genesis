@@ -94,7 +94,7 @@ class BaseApp
 
     public static function getInstance($settings=null, $templateConfig=null)
     {
-           if (!(is_null($templateConfig))) self::$templateConfig = array_replace(self::$templateConfig, $templateConfig);
+        if (!(is_null($templateConfig))) self::$templateConfig = array_replace(self::$templateConfig, $templateConfig);
         if (!(is_null($settings))) self::$settings=$settings;
         if (!isset(self::$instance)) {
             self::$instance = new BaseApp;

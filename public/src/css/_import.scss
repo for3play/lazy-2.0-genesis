@@ -67,8 +67,9 @@ $border-hover: 1px solid #666666;
   text-decoration: none;
   @include border-radius(3px);
   @include gradient-reverse;
+
+  &:hover{
+    border: $border-hover;
+  }
 }
 
-.button:hover{
-  border: $border-hover;
-}

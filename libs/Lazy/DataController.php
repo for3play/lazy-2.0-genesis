@@ -296,6 +296,9 @@ class DataController extends Database
                 'lifeTime' => null
             ];
             self::$db_cache = new Cache($options);
+            if ($_GET['dbCache']=='clear') {
+                self::$db_cache->remove('DB_SCHEMA');
+            }
         }
         if (!(self::$db_cache->get('DB_SCHEMA'))) {
             self::$db_cache->save('empty', 'DB_SCHEMA');
