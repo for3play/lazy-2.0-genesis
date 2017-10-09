@@ -4,3 +4,5 @@ res/
 /.idea
 config.php
 /public/logs
+/public/_tmp
+

@@ -45,7 +45,6 @@ switch ($_SERVER['HTTP_HOST']) {
         define('INCLUDEPATH','../libs/');
         break;
 
-
     case 'dev.mackamandag.net':
         define('DB_HOSTNAME','localhost');
         define('DB_USERNAME','for3play_genesis');
