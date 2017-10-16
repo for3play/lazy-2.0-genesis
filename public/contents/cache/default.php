@@ -3,12 +3,12 @@
 $id = 'DB_SCHEMA';
 
 $options = [
-    'cacheDir' => '_tmp/'
+    'cacheDir' => CACHE_DIR
 ];
 
 $cache = new Lazy\Cache($options);
-$data = $cache->get($id);
+$data = unserialize($cache->get($id));
 
-$app->json_encode(unserialize($data));
+var_dump($data);
 
 ?>
