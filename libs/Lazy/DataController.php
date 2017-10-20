@@ -82,7 +82,7 @@ class DataController extends Database
             }
             return $result;
         } catch (Exception $e) {
-            Debug::error('SQL Statement', $e->getMessage(), $sql);
+            $this->errorCatch($e, $sql);
         }
     }
 
@@ -108,7 +108,7 @@ class DataController extends Database
             }
             return $result;
         } catch (Exception $e) {
-            Debug::error('SQL Statement', $e->getMessage(), $sql);
+            $this->errorCatch($e, $sql);
         }
     }
 
@@ -303,5 +303,10 @@ class DataController extends Database
         if (!(self::$db_cache->get('DB_SCHEMA'))) {
             self::$db_cache->save('empty', 'DB_SCHEMA');
         }
+    }
+
+    private function errorCatch($e, $sql)
+    {
+        Debug::error('SQL Statement', $e->getMessage(), $sql);
     }
 }
