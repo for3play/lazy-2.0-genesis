@@ -23,6 +23,7 @@ class DataController extends Database
     public $schema;
     public $resultMsg;
     public $errors;
+    public $transactionType;
     private $sql;
     private $tableSchema;
     private $numArray;
@@ -57,7 +58,7 @@ class DataController extends Database
         try {
             return parent::query($sql);
         } catch (Exception $e) {
-           Debug::error('SQL Statement', $e->getMessage(), $sql);
+           $this->errorCatch($e, $sql);
         }
     }
 
@@ -103,7 +104,7 @@ class DataController extends Database
                     $this->resultMsg= ['status'=>'success', 'action'=>'insert', 'lastid'=>parent::lastInsertId()];
                     break;
                 case 'update':
-                    $this->resultMsg= ['status'=>'success', 'action'=>'update'];
+                    $this->resultMsg = ['status'=>'success', 'action'=>'update', 'affected_rows'=>$count];
                     break;
             }
             return $result;
@@ -175,11 +176,11 @@ class DataController extends Database
     {
         if ($this->validateFields($post, $tableName, $prefix, $tranType, $addValid)) {
             $tranType = strtolower($tranType);
-            $tranType = ( $tranType=='add' ) ? 'insert' : $tranType;
-            $tranType = ( $tranType=='edit' ) ? 'update' : $tranType;
-            $preSQL = ($tranType=='insert') ? 'INSERT INTO '.$tableName.' SET ' : 'UPDATE '.$tableName.' SET ';
+            $this->transactionType = ( $tranType == 'add' ) ? 'insert' : $tranType;
+            $this->transactionType = ( $tranType == 'edit' ) ? 'update' : $tranType;
+            $preSQL = ($tranType =='add') ? 'INSERT INTO '.$tableName.' SET ' : 'UPDATE '.$tableName.' SET ';
             $this->prepSQL = $preSQL.$this->prepareStatement($preSQL);
-            if ($tranType == 'update') $this->prepSQL.=' WHERE '.$updateParam;
+            if ($tranType == 'edit') $this->prepSQL.=' WHERE '.$updateParam;
             return $this->prepSQL;
         } else {
             return false;
@@ -275,6 +276,7 @@ class DataController extends Database
         $this->resultMsg = ($this->status=='success') ? ['status'=>'success','table'=>$tableName, 'action'=>$tranType] : ['status'=>'fail','table'=>$tableName, 'action'=>$tranType, 'errors'=>$this->errors];
         return ($this->status=='success') ? true : false;
 
+
     }
 
     private function prepareStatement($preSQL)
@@ -307,6 +309,18 @@ class DataController extends Database
 
     private function errorCatch($e, $sql)
     {
-        Debug::error('SQL Statement', $e->getMessage(), $sql);
+        $errorCode = $this->qry->errorInfo()[1];
+        switch($errorCode)
+        {
+            case (1062):
+                $error = ['field'=>$prefix.$value, 'label'=>$value, 'error'=>'duplicate', 'errorMessage'=>'Duplicate Value for Field', 'message'=>$e->getMessage()];
+                $this->status = 'error';
+                array_push($this->errors, $error);
+                $this->resultMsg = ['status'=>'fail', 'action'=>$this->transactionType, 'errors'=>$this->errors];
+                break;
+        default:
+            Debug::error('SQL Statement', $e->getMessage(), $sql);
+            break;
+        }
     }
 }
