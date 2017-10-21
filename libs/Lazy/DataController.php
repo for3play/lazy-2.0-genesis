@@ -23,6 +23,7 @@ class DataController extends Database
     public $schema;
     public $resultMsg;
     public $errors;
+    public $transactionType;
     private $sql;
     private $tableSchema;
     private $numArray;
@@ -57,7 +58,7 @@ class DataController extends Database
         try {
             return parent::query($sql);
         } catch (Exception $e) {
-           Debug::error('SQL Statement', $e->getMessage(), $sql);
+           $this->errorCatch($e, $sql);
         }
     }
 
@@ -82,7 +83,7 @@ class DataController extends Database
             }
             return $result;
         } catch (Exception $e) {
-            Debug::error('SQL Statement', $e->getMessage(), $sql);
+            $this->errorCatch($e, $sql);
         }
     }
 
@@ -103,12 +104,12 @@ class DataController extends Database
                     $this->resultMsg= ['status'=>'success', 'action'=>'insert', 'lastid'=>parent::lastInsertId()];
                     break;
                 case 'update':
-                    $this->resultMsg= ['status'=>'success', 'action'=>'update'];
+                    $this->resultMsg = ['status'=>'success', 'action'=>'update', 'affected_rows'=>$count];
                     break;
             }
             return $result;
         } catch (Exception $e) {
-            Debug::error('SQL Statement', $e->getMessage(), $sql);
+            $this->errorCatch($e, $sql);
         }
     }
 
@@ -175,11 +176,11 @@ class DataController extends Database
     {
         if ($this->validateFields($post, $tableName, $prefix, $tranType, $addValid)) {
             $tranType = strtolower($tranType);
-            $tranType = ( $tranType=='add' ) ? 'insert' : $tranType;
-            $tranType = ( $tranType=='edit' ) ? 'update' : $tranType;
-            $preSQL = ($tranType=='insert') ? 'INSERT INTO '.$tableName.' SET ' : 'UPDATE '.$tableName.' SET ';
+            $this->transactionType = ( $tranType == 'add' ) ? 'insert' : $tranType;
+            $this->transactionType = ( $tranType == 'edit' ) ? 'update' : $tranType;
+            $preSQL = ($tranType =='add') ? 'INSERT INTO '.$tableName.' SET ' : 'UPDATE '.$tableName.' SET ';
             $this->prepSQL = $preSQL.$this->prepareStatement($preSQL);
-            if ($tranType == 'update') $this->prepSQL.=' WHERE '.$updateParam;
+            if ($tranType == 'edit') $this->prepSQL.=' WHERE '.$updateParam;
             return $this->prepSQL;
         } else {
             return false;
@@ -275,6 +276,7 @@ class DataController extends Database
         $this->resultMsg = ($this->status=='success') ? ['status'=>'success','table'=>$tableName, 'action'=>$tranType] : ['status'=>'fail','table'=>$tableName, 'action'=>$tranType, 'errors'=>$this->errors];
         return ($this->status=='success') ? true : false;
 
+
     }
 
     private function prepareStatement($preSQL)
@@ -302,6 +304,28 @@ class DataController extends Database
         }
         if (!(self::$db_cache->get('DB_SCHEMA'))) {
             self::$db_cache->save('empty', 'DB_SCHEMA');
+        }
+    }
+
+    private function errorCatch($e, $sql)
+    {
+        $errorCode = $this->qry->errorInfo()[1];
+        $ErrorMessage = $this->qry->errorInfo()[2];
+        switch($errorCode)
+        {
+            case (1062):
+                $this->status = 'error';
+                $field = preg_replace_callback("/^Duplicate entry '(.*)' for key '(.*)'$/", function ($m) {
+                    return $m[2];
+                    }, $ErrorMessage);
+                $error = ['field'=>$field, 'label'=>$value, 'error'=>'duplicate', 'errorMessage'=>'Duplicate Value for Field', 'message'=>$e->getMessage()];
+
+                array_push($this->errors, $error);
+                $this->resultMsg = ['status'=>'fail', 'action'=>$this->transactionType, 'error'=>'Duplicate Entry', 'errors'=>$this->errors];
+                break;
+        default:
+            Debug::error('SQL Error', $e->getMessage(), $sql);
+            break;
         }
     }
 }
