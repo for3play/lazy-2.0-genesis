@@ -310,16 +310,21 @@ class DataController extends Database
     private function errorCatch($e, $sql)
     {
         $errorCode = $this->qry->errorInfo()[1];
+        $ErrorMessage = $this->qry->errorInfo()[2];
         switch($errorCode)
         {
             case (1062):
-                $error = ['field'=>$prefix.$value, 'label'=>$value, 'error'=>'duplicate', 'errorMessage'=>'Duplicate Value for Field', 'message'=>$e->getMessage()];
                 $this->status = 'error';
+                $field = preg_replace_callback("/^Duplicate entry '(.*)' for key '(.*)'$/", function ($m) {
+                    return $m[2];
+                    }, $ErrorMessage);
+                $error = ['field'=>$field, 'label'=>$value, 'error'=>'duplicate', 'errorMessage'=>'Duplicate Value for Field', 'message'=>$e->getMessage()];
+
                 array_push($this->errors, $error);
-                $this->resultMsg = ['status'=>'fail', 'action'=>$this->transactionType, 'errors'=>$this->errors];
+                $this->resultMsg = ['status'=>'fail', 'action'=>$this->transactionType, 'error'=>'Duplicate Entry', 'errors'=>$this->errors];
                 break;
         default:
-            Debug::error('SQL Statement', $e->getMessage(), $sql);
+            Debug::error('SQL Error', $e->getMessage(), $sql);
             break;
         }
     }
