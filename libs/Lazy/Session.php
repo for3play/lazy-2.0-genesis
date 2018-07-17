@@ -43,6 +43,11 @@ class Session implements \ArrayAccess
         return '';
     }
 
+    public function __debugInfo()
+    {
+        return $_SESSION;
+    }
+
     public function offsetSet($offset, $data)
     {
         if ($offset === null) {
@@ -66,9 +71,5 @@ class Session implements \ArrayAccess
     {
         unset($_SESSION[self::$uniqid][$offset]);
     }
-
-
-
-
 
 }

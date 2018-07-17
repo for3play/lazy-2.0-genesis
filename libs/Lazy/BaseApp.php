@@ -48,15 +48,15 @@ class BaseApp
     private static $route;
     public static $settings;
 
-    public function __construct()
+    protected function __construct()
     {
     }
 
-    protected function __clone()
+    private function __clone()
     {
     }
 
-    protected function __wakeup()
+    private function __wakeup()
     {
     }
 
