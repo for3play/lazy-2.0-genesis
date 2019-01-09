@@ -136,12 +136,19 @@ class DataController extends Database
             $sql.=' LIMIT '.($currPage-1)*$recPerPage.','.$recPerPage;
         }
         #$sql = mysql_real_escape_string($sql);
-        $rowSet = $this->query($sql)->fetchAll();
-        $rowCount = count($rowSet);
-        $info = ['totalRecords'=>$totalRecords, 'recordCount'=>$rowCount, 'currentPage'=>$currPage, 'totalPages'=>$totalPages];
-        $resultSet['info'] = $info;
-        $resultSet['data'] = $rowSet;
-        return $resultSet;
+        try {
+            $qryPrep = $this->prepare($sql);
+            $qryPrep->execute();
+            $rowSet = $qryPrep->fetchAll();
+            $rowCount = count($rowSet);
+            $info = ['totalRecords'=>$totalRecords, 'recordCount'=>$rowCount, 'currentPage'=>$currPage, 'totalPages'=>$totalPages];
+            $resultSet['info'] = $info;
+            $resultSet['data'] = $rowSet;
+            return $resultSet;
+        } catch (Exception $e) {
+            $this->errorCatch($e, $sql);
+        }
+
     }
 
     /**
@@ -309,8 +316,8 @@ class DataController extends Database
 
     private function errorCatch($e, $sql)
     {
-        $errorCode = $this->qry->errorInfo()[1];
-        $ErrorMessage = $this->qry->errorInfo()[2];
+        $errorCode = $this->errorInfo()[1];
+        $ErrorMessage = $this->errorInfo()[2];
         switch($errorCode)
         {
             case (1062):
